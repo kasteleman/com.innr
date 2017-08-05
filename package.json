@@ -1,0 +1,25 @@
+{
+  "name": "com.innr",
+  "version": "1.0.0",
+  "description": "This app allows you to connect your INNR Devices to Homey",
+  "main": "app.js",
+  "dependencies": {
+    "homey-log": "git+https://github.com/athombv/node-homey-log.git",
+    "homey-meshdriver": "git+https://github.com/athombv/node-homey-meshdriver.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "homeyConfig compose && athom project --run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasteleman/com.innr"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kasteleman/innr/issues"
+  },
+  "homepage": "https://github.com/kasteleman/innr#readme"
+}

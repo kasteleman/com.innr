@@ -1,0 +1,209 @@
+{
+  "id": "com.innr",
+  "name": {
+    "en": "INNR Lightning B.V."
+  },
+  "description": {
+    "en": "INNR Lightning B.V.",
+    "nl": "INNR Lightning B.V."
+  },
+  "category": [
+    "lights"
+  ],
+  "version": "1.0.0",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "author": {
+    "name": "Kasteleman",
+    "email": "kasteleman@gmail.com"
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "drivers": [
+    {
+      "id": "smart_plug",
+      "name": {
+        "en": "Smart Plug",
+        "nl": "Smart Plug"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "drivers/smart_plug/assets/images/large.png",
+        "small": "drivers/smart_plug/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "SP 110",
+        "deviceId": 81,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try turning the Plug on and off 6 times.",
+            "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
+          }
+        }
+      }
+    },
+    {
+      "id": "rgbw_bulb",
+      "name": {
+        "en": "Bulb RB 185 C",
+        "nl": "Bulb RB 185 C"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "drivers/rgbw_bulb/assets/images/large.png",
+        "small": "drivers/rgbw_bulb/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "RB 185 C",
+        "deviceId": 528,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door het 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "ambience_bulb",
+      "name": {
+        "en": "Tunable White Bulb",
+        "nl": "Instelbare Witte Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RB 175 W"
+        ],
+        "deviceId": 528,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/ambience_bulb/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/ambience_bulb/assets/images/large.png",
+        "small": "/drivers/ambience_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dimmable_bulb",
+      "name": {
+        "en": "Dimmable Bulb",
+        "nl": "Dimbare Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RB 165",
+          "RS 125",
+          "DL 110 N",
+          "DL 110 W",
+          "SL 110 N",
+          "SL 110 M",
+          "SL 110 W",
+          "UC 110",
+          "FL 110",
+          "PL 110",
+          "ST 110"
+          ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_bulb/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_bulb/assets/images/large.png",
+        "small": "/drivers/dimmable_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    }
+  ],
+  "flow": {
+  }
+}
