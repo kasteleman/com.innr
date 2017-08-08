@@ -7,7 +7,11 @@ const tempMax = 454;
 const maxBrightness = 255;
 
 class AmbienceBulb extends ZigBeeDevice {
+
 	onMeshInit() {
+
+		this.printNode();
+		this.enableDebug();
 
 		// Register onoff capability
 		this.registerCapability('onoff', 'genOnOff', {
