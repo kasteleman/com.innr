@@ -1,34 +1,11 @@
 'use strict';
 
-const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
+const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
 
-const maxBrightness = 255;
-
-class DimmableBulb extends ZigBeeDevice {
-	onMeshInit() {
-		this.printNode();
-		this.enableDebug();
-
-		// Register onoff capability
-		this.registerCapability('onoff', 'genOnOff', {
-			set: value => value ? 'on' : 'off',
-			setParser: () => ({}),
-			get: 'onOff',
-			reportParser: value => value === 1,
-		});
-
-		// Register dim capability
-		this.registerCapability('dim', 'genLevelCtrl', {
-			set: 'moveToLevel',
-			setParser: value => ({
-				level: value * maxBrightness,
-				transtime: this.getSetting('transtime'),
-			}),
-			get: 'currentLevel',
-			reportParser: value => value / maxBrightness,
-		});
-
-	}
+class DimmableBulb extends ZigBeeLightDevice {
+  	onMeshInit() {
+      this.printNode();
+    }
 }
 
 module.exports = DimmableBulb;

@@ -28,7 +28,7 @@
         "en": "Smart Plug",
         "nl": "Smart Plug"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff"
       ],
