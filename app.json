@@ -1,11 +1,11 @@
 {
   "id": "com.innr",
   "name": {
-    "en": "INNR Lightning B.V."
+    "en": "INNR Lighting B.V."
   },
   "description": {
-    "en": "INNR Lightning B.V.",
-    "nl": "INNR Lightning B.V."
+    "en": "INNR Lighting B.V.",
+    "nl": "INNR Lighting B.V."
   },
   "category": [
     "lights"
@@ -52,8 +52,8 @@
     {
       "id": "rgbw_bulb",
       "name": {
-        "en": "Bulb RB 185 C",
-        "nl": "Bulb RB 185 C"
+        "en": "RGB Bulb",
+        "nl": "RGB Lamp"
       },
       "class": "light",
       "capabilities": [
@@ -114,6 +114,7 @@
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [
+          "RB 162"
           "RB 165",
           "RB 175 W",
           "RS 125",
