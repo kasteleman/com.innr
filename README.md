@@ -10,6 +10,7 @@ This app allows you to connect your INNR Devices to Homey
 
 * RS 125 GU10 Spot For your recessed spotlights
 * RB 175 W Tunable White Bulb
+* RB 162
 
 # Untested Devices
 
