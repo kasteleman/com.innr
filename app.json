@@ -123,9 +123,54 @@
           "SL 110 N",
           "SL 110 M",
           "SL 110 W",
+          "PL 110"
+          ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_bulb/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_bulb/assets/images/large.png",
+        "small": "/drivers/dimmable_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "led_strip",
+      "name": {
+        "en": "LED Strip",
+        "nl": "LED Strip"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
           "UC 110",
           "FL 110",
-          "PL 110",
           "ST 110"
           ],
         "deviceId": 256,
