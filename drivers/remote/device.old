@@ -1,0 +1,130 @@
+'use strict';
+
+const Homey = require('homey');
+
+const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
+
+class remotescenes extends ZigBeeDevice {
+	onMeshInit() {
+		this.printNode();
+
+		// Not useful in this case, but using registerReportListener you can subscribe to incoming reports
+		/* this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
+			console.log(report);
+		}, 2);
+
+		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
+			console.log(report);
+		}, 3);
+
+		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
+			console.log(report);
+		}, 4);
+
+		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
+			console.log(report);
+		}, 5);
+
+		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
+			console.log(report);
+		}, 6);
+
+		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
+			console.log(report);
+		}, 7); */
+
+		// register the flowcard
+		let tokens = {};
+		// let state = {};
+
+		const remoteButtonTrigger = new Homey.FlowCardTriggerDevice('remote_button_pressed');
+		remoteButtonTrigger
+		.registerRunListener(this, tokens, state => {
+			console.log(tokens);
+			console.log(state);
+		})
+		.register();
+		if (this.node) {
+
+			// Listen to all the commands that come in
+			this.node.on('command', report => {
+				console.log('Command received');
+				// console.log(report);
+				console.log(report.value);
+				console.log(report.value.command);
+				// if (report && typeof report.value.command !== 'undefined') {
+					// On command
+					// if (report.value.command === 'on' || report.value.command === 'moveToLevelWithOnOff') {
+					//	console.log('On command received');
+
+						console.log(report.value.src.epId);
+						remoteButtonTrigger.trigger(this, { button_number: report.value.src.epId, button_type: report.value.command }, null)
+						.then(this.log)
+						.catch(this.error);
+					// }
+
+					// Off command
+					// if (report.value.command === 'off' || report.value.command === 'offWithEffect') {
+					//	console.log('Off command received');
+						// trigger the card
+
+					// }
+
+					/* if (report.value.command === 'moveToLevelWithOnOff') {
+						console.log('moveToLevelWithOnOff command received');
+
+						if (report.value.level === 2) {
+							console.log('button 1 pressed');
+
+						}
+						if (report.value.level === 52) {
+							console.log('button 2 pressed');
+
+						}
+						if (report.value.level === 102) {
+							console.log('button 3 pressed');
+
+						}
+						if (report.value.level === 153) {
+							console.log('button 4 pressed');
+
+						}
+						if (report.value.level === 194) {
+							console.log('button 5 pressed');
+
+						}
+						if (report.value.level === 254) {
+							console.log('button 6 pressed');
+
+						}
+					}*/
+
+					// Dim commands Short press
+					/* if (report.value.command === 'step') {
+						console.log('Dimm short press command received');
+						// Short press
+						// if (report.value.command.stepsize === 2) {
+						// Dim up
+						// if (report.stepmode === 0) Homey.manager('flow').triggerDevice('remote_dim', null, { direction: 'press-up' }, node.device_data);
+						// Dim down
+						// if (report.stepmode === 1) Homey.manager('flow').triggerDevice('remote_dim', null, { direction: 'press-down' }, node.device_data);
+						// }
+					}*/
+
+					// Dim commands Long press
+					/* if (report.value.command === 'move') {
+						console.log('Dimm long press command received');
+						// Dim up
+						// if (report.stepmode === 0) Homey.manager('flow').triggerDevice('remote_dim', null, { direction: 'hold-up' }, node.device_data);
+						// Dim down
+						// if (report.stepmode === 1) Homey.manager('flow').triggerDevice('remote_dim', null, { direction: 'hold-down' }, node.device_data);
+					} */
+				// }
+
+			});
+		}
+
+	}
+}
+
+module.exports = remotescenes;

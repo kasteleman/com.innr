@@ -50,10 +50,36 @@
       }
     },
     {
+      "id": "remote",
+      "name": {
+        "en": "Remote",
+        "nl": "Remote"
+      },
+      "class": "icon",
+      "capabilities": [
+      ],
+      "images": {
+        "large": "drivers/remote/assets/images/large.png",
+        "small": "drivers/remote/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "RC 110",
+        "deviceId": 2096,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Press and Hold minus and PROGRAM button for 3 seconds to start inclusion",
+            "nl": "Hou de min and PROGRAM knop gedurende 3 seconden ingedrukt om toevoeging te starten"
+          }
+        }
+      }
+    },
+    {
       "id": "rgbw_bulb",
       "name": {
-        "en": "RGB Bulb",
-        "nl": "RGB Lamp"
+        "en": "RGBW Bulb",
+        "nl": "RGBW Lamp"
       },
       "class": "light",
       "capabilities": [
@@ -113,18 +139,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [
-          "RB 162",
-          "RB 165",
-          "RB 175 W",
-          "RS 125",
-          "DL 110 N",
-          "DL 110 W",
-          "SL 110 N",
-          "SL 110 M",
-          "SL 110 W",
-          "PL 110"
-          ],
+        "productId": [ "RB 162", "RB 165", "RB 175 W", "RS 125", "RS 122", "DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W", "PL 110" ],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -168,11 +183,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [
-          "UC 110",
-          "FL 110",
-          "ST 110"
-          ],
+        "productId": [ "UC 110", "FL 110", "ST 110" ],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -205,5 +216,45 @@
     }
   ],
   "flow": {
-  }
+    "triggers": [
+         {
+             "id": "remote_button_pressed",
+             "title": {
+                 "en": "Remote button pressed",
+                 "nl": "Remote knop gedrukt"
+             },
+             "tokens": [
+               {
+                   "name": "button_number",
+                   "type": "number",
+                   "title": {
+                       "en": "Buttonnumber pushed",
+                       "nl": "Knopnummer gedrukt"
+                   },
+                   "example": {
+                       "en": "+"
+                   }
+               },
+               {
+                  "name": "button_type",
+                  "type": "string",
+                  "title": {
+                      "en": "Type of button pushed",
+                      "nl": "Type knop gedrukt"
+                  },
+                  "example": {
+                      "en": "on"
+                  }
+                }
+             ],
+             "args": [
+                 {
+                     "name": "device",
+                     "type": "device",
+                     "filter": "driver_id=remote"
+                 }
+             ]
+         }
+     ]
+   }
 }
