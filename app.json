@@ -252,6 +252,54 @@
                      "name": "device",
                      "type": "device",
                      "filter": "driver_id=remote"
+                 },
+                 {
+                   "name": "button",
+                   "type": "dropdown",
+                   "values": [
+                     {
+                       "id": "1",
+                       "label": {
+                         "en": "Lights button 1",
+                         "nl": "Lights knop 1"
+                       }
+                     },
+                     {
+                       "id": "2",
+                       "label": {
+                         "en": "Lights button 2",
+                         "nl": "Lights knop 2"
+                       }
+                     },
+                     {
+                       "id": "3",
+                       "label": {
+                         "en": "Lights button 3",
+                         "nl": "Lights knop 3"
+                       }
+                     },
+                     {
+                       "id": "4",
+                       "label": {
+                         "en": "Lights button 4",
+                         "nl": "Lights knop 4"
+                       }
+                     },
+                     {
+                       "id": "5",
+                       "label": {
+                         "en": "Lights button 5",
+                         "nl": "Lights knop 5"
+                       }
+                     },
+                     {
+                       "id": "6",
+                       "label": {
+                         "en": "Lights button 6",
+                         "nl": "Lights knop 6"
+                       }
+                     }
+                   ]
                  }
              ]
          }

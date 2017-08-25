@@ -37,15 +37,12 @@ class remotescenes extends ZigBeeDevice {
 
 		let tokens = {};
 		let pushed = {};
-		let buttonpushed;
-		const args = {};
 
-		const remoteButtonTrigger = new Homey.FlowCardTriggerDevice('remote_button_pressed')
+		this.remoteButtonTrigger = new Homey.FlowCardTriggerDevice('remote_button_pressed')
 		.register()
-		.registerRunListener(args, tokens, state => {
-			if (args && args.hasOwnProperty('state')) return console.log(args.state);
+		.registerRunListener((args, state) => {
 			this.log(args, state);
-			Promise.reject(new Error('invalid arguments and or state provided'));
+			return Promise.resolve(args.button === state.button);
 		});
 
 		if (this.node) {
@@ -54,34 +51,39 @@ class remotescenes extends ZigBeeDevice {
 			this.node.on('command', report => {
 				console.log('Command received');
 				console.log(report);
-				console.log(report.endpoint);
+				// console.log(report.endpoint);
 				console.log(report.attr);
-				console.log(report.value);
+				// console.log(report.value);
 
 				// shortpress - or +
-				if (report.attr === 'step' && report.value.stepmode === 1) { pushed = '- short'; }
-				if (report.attr === 'step' && report.value.stepmode === 0) { pushed = '+ short'; }
+				if (report.value.command === 'step' && report.value.stepmode === 1) { pushed = '- short'; }
+				if (report.value.command === 'step' && report.value.stepmode === 0) { pushed = '+ short'; }
 
 				// on or off button
-				if (report.attr === 'on') { pushed = 'on'; }
-				if (report.attr === 'off') { pushed = 'off'; }
+				if (report.value.command === 'on') { pushed = 'on'; }
+				if (report.value.command === 'off') { pushed = 'off'; }
 
 				// longpress - or +
-				if (report.attr === 'move' && report.value.movemode === 1) { pushed = '- long'; }
-				if (report.attr === 'move' && report.value.movemode === 0) { pushed = '+ long'; }
+				if (report.value.command === 'move' && report.value.movemode === 1) { pushed = '- long'; }
+				if (report.value.command === 'move' && report.value.movemode === 0) { pushed = '+ long'; }
+
+				// stop received after longpress
+				if (report.value.command === 'stop') { pushed = 'stop'; }
 
 				// todo scenes:
 				// buttons 1 t/m 6 moveToLevelWithOnOff and level
 				// - , on, off and + same as lights buttons
 
+				// exclude SCENES button
 				if (parseInt(report.endpoint, 0) > 0) {
-					buttonpushed = parseInt(report.endpoint, 0) - 1;
-					tokens = { button_number: buttonpushed, button_type: pushed };
+
+					tokens = {
+						button_number: parseInt(report.endpoint - 1, 0),
+						button_type: pushed,
+					};
 					this.log(tokens);
 
-					// to do args for different buttons pushed icw app.json
-
-					remoteButtonTrigger.trigger(this, tokens, null)
+					this.remoteButtonTrigger.trigger(this, tokens, { button: parseInt(report.endpoint - 1, 0).toString() })
 					.then(this.log)
 					.catch(this.error);
 				}
