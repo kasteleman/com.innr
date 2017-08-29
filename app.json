@@ -68,6 +68,7 @@
         "deviceId": 2096,
         "profileId": 49246,
         "learnmode": {
+          "image": "/drivers/remote/assets/learnmode.svg",
           "instruction": {
             "en": "Press and Hold minus and PROGRAM button for 3 seconds to start inclusion",
             "nl": "Hou de min and PROGRAM knop gedurende 3 seconden ingedrukt om toevoeging te starten"
@@ -139,7 +140,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 162", "RB 165", "RB 175 W", "RS 125", "RS 122", "DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W", "PL 110" ],
+        "productId": [ "RB 162", "RB 165", "RB 175 W" ],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -153,6 +154,138 @@
       "images": {
         "large": "/drivers/dimmable_bulb/assets/images/large.png",
         "small": "/drivers/dimmable_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dimmable_gu10",
+      "name": {
+        "en": "Dimmable GU10 Bulb",
+        "nl": "Dimbare GU10 Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [ "RS 125", "RS 122" ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_gu10/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_gu10/assets/images/large.png",
+        "small": "/drivers/dimmable_gu10/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dimmable_puck",
+      "name": {
+        "en": "Dimmable PuckLight",
+        "nl": "Dimbare PuckLight"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [ "PL110" ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_puck/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_puck/assets/images/large.png",
+        "small": "/drivers/dimmable_puck/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dimmable_spot",
+      "name": {
+        "en": "Dimmable SPOT Bulb",
+        "nl": "Dimbare SPOT Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [ "DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W" ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_spot/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer het dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_spot/assets/images/large.png",
+        "small": "/drivers/dimmable_spot/assets/images/small.png"
       },
       "settings": [
         {

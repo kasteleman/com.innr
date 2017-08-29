@@ -2,11 +2,11 @@
 
 const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
 
-class DimmableBulb extends ZigBeeLightDevice {
+class DimmableSpot extends ZigBeeLightDevice {
 	onMeshInit() {
 		super.onMeshInit();
 		this.printNode();
 	}
 }
 
-module.exports = DimmableBulb;
+module.exports = DimmableSpot;
