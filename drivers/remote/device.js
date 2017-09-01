@@ -8,7 +8,7 @@ class remotescenes extends ZigBeeDevice {
 	onMeshInit() {
 		this.printNode();
 
-		// Not useful in this case, but using registerReportListener you can subscribe to incoming reports
+		// reportlisteners for the endpoints
 		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
 			console.log(report);
 		}, 2);
