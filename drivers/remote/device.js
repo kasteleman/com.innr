@@ -39,11 +39,11 @@ class remotescenes extends ZigBeeDevice {
 		let pushed = {};
 
 		this.remoteButtonTrigger = new Homey.FlowCardTriggerDevice('remote_button_pressed')
-		.register()
-		.registerRunListener((args, state) => {
-			this.log(args, state);
-			return Promise.resolve(args.button === state.button);
-		});
+			.register()
+			.registerRunListener((args, state) => {
+				this.log(args, state);
+				return Promise.resolve(args.button === state.button);
+			});
 
 		if (this.node) {
 
@@ -84,8 +84,8 @@ class remotescenes extends ZigBeeDevice {
 					this.log(tokens);
 
 					this.remoteButtonTrigger.trigger(this, tokens, { button: parseInt(report.endpoint - 1, 0).toString() })
-					.then(this.log)
-					.catch(this.error);
+						.then(this.log)
+						.catch(this.error);
 				}
 
 			});

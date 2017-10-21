@@ -40,3 +40,9 @@ Type (string): "- short", "+ short", on, off, "- long", "+ long", stop
 Slider on the remote in SCENES position, commands are broadcasted and applied to group 0. If i stand correct, this applies to all ZigBee devices, but could not test it, because i have no other ZigBee brands in use with Homey.
 
 Feedback, suggestions welcome!
+
+# Version 1.0.1
+
+Added RS 128 T (not yet tested) tunable GU10
+
+SP 110 Removed polling of device. Added attribute report configuration instead with max report interval of 300 seconds
