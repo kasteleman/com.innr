@@ -43,6 +43,10 @@ Feedback, suggestions welcome!
 
 # Version 1.0.1
 
-Added RS 128 T (not yet tested) tunable GU10
+Added RS 128 T tunable GU10
 
 SP 110 Removed polling of device. Added attribute report configuration instead with max report interval of 300 seconds
+
+# Version 1.0.2
+
+Added RB 178 T (not yet tested) tunable Bulb
