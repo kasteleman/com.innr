@@ -10,6 +10,14 @@ class SmartPlug extends ZigBeeDevice {
 			this.log('onOff', data);
 			this.setCapabilityValue('onoff', data === 1);
 		}, 0);
+
+		if (this.hasCapability('onoff')) {
+			this.registerCapability('onoff', 'genOnOff', {
+				getOpts: {
+					getOnStart: true,
+				},
+			});
+		}
 	}
 }
 

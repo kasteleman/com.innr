@@ -51,7 +51,7 @@ SP 110 Removed polling of device. Added attribute report configuration instead w
 
 Added RB 178 T tunable Bulb
 
-# Version 1.0.2
+# Version 1.0.3
 
 Added RS 128 T tunable GU10
 Added RB 148 T tunable E14
