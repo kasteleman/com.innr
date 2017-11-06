@@ -55,5 +55,3 @@ Added RB 178 T tunable Bulb
 
 Added RS 128 T tunable GU10
 Added RB 148 T tunable E14
-
-Have to fix the icon for E14
