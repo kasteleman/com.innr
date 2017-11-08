@@ -55,10 +55,7 @@ Added RB 178 T tunable Bulb
 
 Added RS 128 T tunable GU10
 Added RB 148 T tunable E14
-<<<<<<< HEAD
-=======
 
 # Version 1.0.4
 
-Added RB 145
->>>>>>> beta
+Added RB 145 dimmable e14
