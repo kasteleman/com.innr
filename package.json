@@ -1,6 +1,6 @@
 {
   "name": "com.innr",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This app allows you to connect your INNR Devices to Homey",
   "main": "app.js",
   "dependencies": {
