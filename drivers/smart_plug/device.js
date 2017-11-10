@@ -10,13 +10,12 @@ class SmartPlug extends ZigBeeDevice {
 					getOnStart: true,
 				},
 			});
+			// Report is send if status is changed or after 5 min
+			this.registerAttrReportListener('genOnOff', 'onOff', 1, 300, 1, data => {
+				this.log('onOff', data);
+				this.setCapabilityValue('onoff', data === 1);
+			}, 0);
 		}
-
-		// Report is send if status is changed or after 5 min
-		this.registerAttrReportListener('genOnOff', 'onOff', 1, 300, 1, data => {
-			this.log('onOff', data);
-			this.setCapabilityValue('onoff', data === 1);
-		}, 0);
 	}
 }
 
