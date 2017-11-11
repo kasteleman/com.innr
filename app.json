@@ -17,6 +17,14 @@
     "name": "Kasteleman",
     "email": "kasteleman@gmail.com"
   },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "email": "kasteleman@gmail.com",
+        "currency": "EUR"
+      }
+    }
+  },
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
