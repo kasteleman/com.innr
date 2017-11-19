@@ -7,3 +7,6 @@ class DimmablePuck extends ZigBeeLightDevice {
 }
 
 module.exports = DimmablePuck;
+
+// offWithEffect	server	["effectid","effectvariant"]
+// onWithRecallGlobalScene	server	[]

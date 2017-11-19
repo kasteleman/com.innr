@@ -39,7 +39,11 @@ Type (string): "- short", "+ short", on, off, "- long", "+ long", stop
 
 Slider on the remote in SCENES position, commands are broadcasted and applied to group 0. If i stand correct, this applies to all ZigBee devices, but could not test it, because i have no other ZigBee brands in use with Homey.
 
-Feedback, suggestions welcome!
+# Feedback, suggestions welcome!
+
+Any requests please post them in the https://forum.athom.com/discussion/3882/beta-release-innr-zigbee-main-discussion-topic or contact me on [Slack](https://athomcommunity.slack.com/team/kasteleman)    
+Please report issues at the [issues section on Github](https://github.com/kasteleman/com.innr/issues) otherwise in the above mentioned topic.     
+
 
 # Version 1.0.1
 
