@@ -19,10 +19,9 @@
   },
   "contributing": {
     "donate": {
-      "paypal": {
-        "email": "kasteleman@gmail.com",
-        "currency": "EUR"
-      }
+        "paypal": {
+            "username": "paypal.me/kasteleman"
+        }
     }
   },
   "images": {
