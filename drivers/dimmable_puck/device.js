@@ -10,16 +10,16 @@ class DimmablePuck extends ZigBeeDevice {
 			setParser(value) {
 				if (value) {
 					this.node.endpoints[0].clusters.genOnOff.do('onWithRecallGlobalScene', {})
-						.then(result2 => {
-							this.log('onWithRecallGlobalScene: ', result2);
+						.then(result => {
+							this.log('onWithRecallGlobalScene: ', result);
 						})
 						.catch(err => {
 							this.log('could not send onWithRecallGlobalScene');
 							this.log(err);
 						});
 					this.node.endpoints[0].clusters.genOnOff.do('on', {})
-						.then(result2 => {
-							this.log('on: ', result2);
+						.then(result => {
+							this.log('on: ', result);
 						})
 						.catch(err => {
 							this.log('could not set to on');
@@ -28,16 +28,16 @@ class DimmablePuck extends ZigBeeDevice {
 				}
 				if (!value) {
 					this.node.endpoints[0].clusters.genOnOff.do('offWithEffect', { effectid: 0, effectvariant: 0 })
-						.then(result2 => {
-							this.log('offWithEffect: ', result2);
+						.then(result => {
+							this.log('offWithEffect: ', result);
 						})
 						.catch(err => {
 							this.log('could not send offWithEffect');
 							this.log(err);
 						});
 					this.node.endpoints[0].clusters.genOnOff.do('off', {})
-						.then(result2 => {
-							this.log('off: ', result2);
+						.then(result => {
+							this.log('off: ', result);
 						})
 						.catch(err => {
 							this.log('could not set to off');

@@ -10,9 +10,6 @@ This app allows you to connect your INNR Devices to Homey
 * RB 185 C RGBW Bulb
 * SP 110 Smart Plug. Metering not supported!
 * RC 110 Remote
-
-# Untested Devices
-
 * RB 165
 * DL 110 N
 * DL 110 W
@@ -45,21 +42,6 @@ Any requests please post them in the https://forum.athom.com/discussion/3882/bet
 Please report issues at the [issues section on Github](https://github.com/kasteleman/com.innr/issues) otherwise in the above mentioned topic.     
 
 
-# Version 1.0.1
+# Version 1.0.5
 
-Added RS 128 T tunable GU10
-
-SP 110 Removed polling of device. Added attribute report configuration instead with max report interval of 300 seconds
-
-# Version 1.0.2
-
-Added RB 178 T tunable Bulb
-
-# Version 1.0.3
-
-Added RS 128 T tunable GU10
-Added RB 148 T tunable E14
-
-# Version 1.0.4
-
-Added RB 145
+Fix for firmware issues of the dimmable puck, spot and ledstrips
