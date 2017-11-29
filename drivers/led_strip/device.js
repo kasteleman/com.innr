@@ -59,7 +59,7 @@ class LedStrip extends ZigBeeDevice {
 		});
 
 		this.registerCapability('dim', 'genLevelCtrl', {
-			set: 'moveToLevel',
+			set: 'moveToLevelWithOnOff',
 			setParser(value) {
 				if (value === 0) {
 					return this.triggerCapabilityListener('onoff', false)
@@ -69,13 +69,13 @@ class LedStrip extends ZigBeeDevice {
 					return this.triggerCapabilityListener('onoff', true)
 						.then(() => ({
 							level: Math.round(value * maxDim),
-							transtime: 0,
+							transtime: this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0,
 						}))
 						.catch(err => new Error('failed_to_trigger_onoff`', err));
 				}
 				return {
 					level: Math.round(value * maxDim),
-					transtime: 0,
+					transtime: this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0,
 				};
 			},
 			get: 'currentLevel',
