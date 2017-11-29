@@ -1,7 +1,5 @@
 'use strict';
 
-const maxDim = 254;
-
 const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
 
 class LedStrip extends ZigBeeDevice {
@@ -58,36 +56,13 @@ class LedStrip extends ZigBeeDevice {
 			},
 		});
 
-		this.registerCapability('dim', 'genLevelCtrl', {
-			set: 'moveToLevelWithOnOff',
-			setParser(value) {
-				if (value === 0) {
-					return this.triggerCapabilityListener('onoff', false)
-						.then(() => null)
-						.catch(err => new Error('failed_to_trigger_onoff'));
-				} else if (this.getCapabilityValue('onoff') === false && value > 0) {
-					return this.triggerCapabilityListener('onoff', true)
-						.then(() => ({
-							level: Math.round(value * maxDim),
-							transtime: this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0,
-						}))
-						.catch(err => new Error('failed_to_trigger_onoff`', err));
-				}
-				return {
-					level: Math.round(value * maxDim),
-					transtime: this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0,
-				};
-			},
-			get: 'currentLevel',
-			reportParser(value) {
-				return value / maxDim;
-			},
-			report: 'currentLevel',
-			getOpts: {
-				getOnStart: true,
-			},
-		});
-
+		if (this.hasCapability('dim')) {
+			this.registerCapability('dim', 'genLevelCtrl', {
+				getOpts: {
+					getOnStart: true,
+				},
+			});
+		}
 	}
 
 }
