@@ -65,10 +65,17 @@ class DimmablePuck extends ZigBeeDevice {
 					return this.triggerCapabilityListener('onoff', false)
 						.then(() => null)
 						.catch(err => new Error('failed_to_trigger_onoff'));
+				} else if (this.getCapabilityValue('onoff') === false && value > 0) {
+					return this.triggerCapabilityListener('onoff', true)
+						.then(() => ({
+							level: Math.round(value * maxDim),
+							transtime: 0,
+						}))
+						.catch(err => new Error('failed_to_trigger_onoff`', err));
 				}
 				return {
 					level: Math.round(value * maxDim),
-					transtime: this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0,
+					transtime: 0,
 				};
 			},
 			get: 'currentLevel',
@@ -80,15 +87,6 @@ class DimmablePuck extends ZigBeeDevice {
 				getOnStart: true,
 			},
 		});
-
-		/*
-		if (this.hasCapability('dim')) {
-			this.registerCapability('dim', 'genLevelCtrl', {
-				getOpts: {
-					getOnStart: true,
-				},
-			});
-		} */
 
 	}
 
