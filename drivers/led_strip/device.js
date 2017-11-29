@@ -5,6 +5,8 @@ const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
 class LedStrip extends ZigBeeDevice {
 
 	onMeshInit() {
+		this.printNode();
+		this.enableDebug();
 		this.registerCapability('onoff', 'genOnOff', {
 			set: 'onWithRecallGlobalScene',
 			setParser(value) {
