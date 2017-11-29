@@ -7,6 +7,17 @@ class LedStrip extends ZigBeeDevice {
 	onMeshInit() {
 		this.printNode();
 		this.enableDebug();
+
+		// write programingOperMode
+		this.node.endpoints[0].clusters.genLevelCtrl.write('onLevel', 1)
+			.then(result => {
+				this.log('onLevel: ', result);
+			})
+			.catch(err => {
+				this.log('could not write onLevel');
+				this.log(err);
+			});
+
 		this.registerCapability('onoff', 'genOnOff', {
 			set: 'onWithRecallGlobalScene',
 			setParser(value) {
