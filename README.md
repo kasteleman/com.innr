@@ -4,6 +4,7 @@ This app allows you to connect your INNR Devices to Homey
 
 # Supported Devices
 
+* BY 178 T
 * RS 122 GU10 Spot For your recessed spotlights
 * RB 175 W Tunable White Bulb
 * RB 162
@@ -42,6 +43,6 @@ Any requests please post them in the https://forum.athom.com/discussion/3882/bet
 Please report issues at the [issues section on Github](https://github.com/kasteleman/com.innr/issues) otherwise in the above mentioned topic.     
 
 
-# Version 1.0.5
+# Version 1.0.6
 
-Fix for firmware issues of the dimmable puck, spot and ledstrips
+Added BY 178 T tunable bulb
