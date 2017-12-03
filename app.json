@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.0.5",
+  "version": "1.0.6",
   "compatibility": ">=1.5.3",
   "sdk": 2,
   "author": {
@@ -325,7 +325,10 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 178 T" ],
+        "productId": [
+          "BY 178 T",
+          "RB 178 T"
+        ],
         "deviceId": 544,
         "profileId": 49246,
         "learnmode": {
