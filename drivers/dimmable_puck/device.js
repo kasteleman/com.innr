@@ -7,6 +7,17 @@ const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
 class DimmablePuck extends ZigBeeDevice {
 
 	onMeshInit() {
+
+		// write onLevel
+		this.node.endpoints[0].clusters.genLevelCtrl.write('onLevel', 1)
+			.then(result => {
+				this.log('onLevel: ', result);
+			})
+			.catch(err => {
+				this.log('could not write onLevel');
+				this.log(err);
+			});
+
 		this.registerCapability('onoff', 'genOnOff', {
 			set: 'onWithRecallGlobalScene',
 			setParser(value) {
@@ -61,22 +72,37 @@ class DimmablePuck extends ZigBeeDevice {
 		this.registerCapability('dim', 'genLevelCtrl', {
 			set: 'moveToLevel',
 			setParser(value) {
+				const transitionTime = this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0;
+				// this.log('transitionTime: ', transitionTime);
+				const wantedLevel = Math.round(value * maxDim);
+				// this.log('wantedLevel: ', wantedLevel);
 				if (value === 0) {
-					return this.triggerCapabilityListener('onoff', false)
-						.then(() => null)
-						.catch(err => new Error('failed_to_trigger_onoff'));
+					this.node.endpoints[0].clusters.genOnOff.do('off', {})
+						.then(result => {
+							this.log('off: ', result);
+						})
+						.catch(err => {
+							this.log('could not send off');
+							this.log(err);
+						});
 				} else if (this.getCapabilityValue('onoff') === false && value > 0) {
-					return this.triggerCapabilityListener('onoff', true)
-						.then(() => ({
-							level: Math.round(value * maxDim),
-							transtime: 0,
-						}))
-						.catch(err => new Error('failed_to_trigger_onoff`', err));
+					this.node.endpoints[0].clusters.genOnOff.do('on', {})
+						.then(result => {
+							this.log('on: ', result);
+							this.node.endpoints[0].clusters.genLevelCtrl.do('moveToLevel', { level: wantedLevel, transtime: 1 });
+							this.setCapabilityValue('onoff', true);
+							return null;
+						})
+						.catch(err => {
+							this.log('could not send on');
+							this.log(err);
+						});
 				}
-				return {
-					level: Math.round(value * maxDim),
-					transtime: 0,
-				};
+
+				this.node.endpoints[0].clusters.genLevelCtrl.do('moveToLevel', { level: wantedLevel, transtime: 1 });
+				this.setCapabilityValue('onoff', true);
+				return null;
+
 			},
 			get: 'currentLevel',
 			reportParser(value) {
@@ -93,6 +119,3 @@ class DimmablePuck extends ZigBeeDevice {
 }
 
 module.exports = DimmablePuck;
-
-// offWithEffect	server	["effectid","effectvariant"]
-// onWithRecallGlobalScene	server	[]

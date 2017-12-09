@@ -10,12 +10,24 @@
   "category": [
     "lights"
   ],
-  "version": "1.0.6",
+  "version": "1.0.7",
   "compatibility": ">=1.5.3",
   "sdk": 2,
   "author": {
     "name": "Kasteleman",
     "email": "kasteleman@gmail.com"
+  },
+  "contributors": {
+  "developers": [
+      {
+        "name": "Mark T",
+        "email": "mtudor@icefusion.co.uk"
+      },
+      {
+        "name": "Kasteleman",
+        "email": "kasteleman@gmail.com"
+      }
+    ]
   },
   "contributing": {
     "donate": {
@@ -503,11 +515,6 @@
         "onoff",
         "dim"
       ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "setOnDim": false
-        }
-      },
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [ "UC 110", "FL 110", "ST 110" ],

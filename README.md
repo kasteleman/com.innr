@@ -42,6 +42,12 @@ Slider on the remote in SCENES position, commands are broadcasted and applied to
 Any requests please post them in the https://forum.athom.com/discussion/3882/beta-release-innr-zigbee-main-discussion-topic or contact me on [Slack](https://athomcommunity.slack.com/team/kasteleman)    
 Please report issues at the [issues section on Github](https://github.com/kasteleman/com.innr/issues) otherwise in the above mentioned topic.     
 
+# Version 1.0.7
+
+Driver for Puck, Spot and Ledstrip adapted because of firmwarebug in those devices.
+Now when turned on, they go to the last dim value instead. Bare in mind this is NOT if you cut the power on the devices! If power is restored the devices are on 100%.
+When used in a flow, the devices first turn on with low dim value and then are dimmed towards the desired value. Thanks Moek for testing!
+
 
 # Version 1.0.6
 

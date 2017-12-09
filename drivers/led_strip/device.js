@@ -1,14 +1,14 @@
 'use strict';
 
+const maxDim = 254;
+
 const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
 
 class LedStrip extends ZigBeeDevice {
 
 	onMeshInit() {
-		this.printNode();
-		this.enableDebug();
 
-		// write programingOperMode
+		// write onLevel
 		this.node.endpoints[0].clusters.genLevelCtrl.write('onLevel', 1)
 			.then(result => {
 				this.log('onLevel: ', result);
@@ -69,13 +69,51 @@ class LedStrip extends ZigBeeDevice {
 			},
 		});
 
-		if (this.hasCapability('dim')) {
-			this.registerCapability('dim', 'genLevelCtrl', {
-				getOpts: {
-					getOnStart: true,
-				},
-			});
-		}
+		this.registerCapability('dim', 'genLevelCtrl', {
+			set: 'moveToLevel',
+			setParser(value) {
+				const transitionTime = this.getSetting('transition_time') ? Math.round(this.getSetting('transition_time') * 10) : 0;
+				// this.log('transitionTime: ', transitionTime);
+				const wantedLevel = Math.round(value * maxDim);
+				// this.log('wantedLevel: ', wantedLevel);
+				if (value === 0) {
+					this.node.endpoints[0].clusters.genOnOff.do('off', {})
+						.then(result => {
+							this.log('off: ', result);
+						})
+						.catch(err => {
+							this.log('could not send off');
+							this.log(err);
+						});
+				} else if (this.getCapabilityValue('onoff') === false && value > 0) {
+					this.node.endpoints[0].clusters.genOnOff.do('on', {})
+						.then(result => {
+							this.log('on: ', result);
+							this.node.endpoints[0].clusters.genLevelCtrl.do('moveToLevel', { level: wantedLevel, transtime: 1 });
+							this.setCapabilityValue('onoff', true);
+							return null;
+						})
+						.catch(err => {
+							this.log('could not send on');
+							this.log(err);
+						});
+				}
+
+				this.node.endpoints[0].clusters.genLevelCtrl.do('moveToLevel', { level: wantedLevel, transtime: 1 });
+				this.setCapabilityValue('onoff', true);
+				return null;
+
+			},
+			get: 'currentLevel',
+			reportParser(value) {
+				return value / maxDim;
+			},
+			report: 'currentLevel',
+			getOpts: {
+				getOnStart: true,
+			},
+		});
+
 	}
 
 }
