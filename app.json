@@ -565,9 +565,7 @@
                        "en": "Buttonnumber pushed",
                        "nl": "Knopnummer gedrukt"
                    },
-                   "example": {
-                       "en": "+"
-                   }
+                   "example": 1
                },
                {
                   "name": "button_type",
@@ -577,7 +575,8 @@
                       "nl": "Type knop gedrukt"
                   },
                   "example": {
-                      "en": "on"
+                      "en": "on",
+                      "nl": "on"
                   }
                 }
              ],
