@@ -11,7 +11,7 @@
     "lights"
   ],
   "version": "1.0.7",
-  "compatibility": ">=1.5.3",
+  "compatibility": ">=1.5.4",
   "sdk": 2,
   "author": {
     "name": "Kasteleman",
