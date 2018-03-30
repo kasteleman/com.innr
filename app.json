@@ -10,12 +10,32 @@
   "category": [
     "lights"
   ],
-  "version": "1.0.4",
-  "compatibility": ">=1.5.3",
+  "version": "1.0.8",
+  "compatibility": ">=1.5.4",
   "sdk": 2,
   "author": {
     "name": "Kasteleman",
     "email": "kasteleman@gmail.com"
+  },
+  "athomForumDiscussionId": 3882,
+  "contributors": {
+  "developers": [
+      {
+        "name": "Mark T",
+        "email": "mtudor@icefusion.co.uk"
+      },
+      {
+        "name": "Kasteleman",
+        "email": "kasteleman@gmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+        "paypal": {
+            "username": "kasteleman"
+        }
+    }
   },
   "images": {
     "large": "/assets/images/large.png",
@@ -55,7 +75,7 @@
         "en": "Remote",
         "nl": "Remote"
       },
-      "class": "icon",
+      "class": "other",
       "capabilities": [
       ],
       "images": {
@@ -97,13 +117,64 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": "RB 185 C",
+        "productId": ["RB 185 C", "BY 185 C"],
         "deviceId": 528,
         "profileId": 49246,
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
             "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "rgbw_strip",
+      "name": {
+        "en": "RGBW LEDSTRIP",
+        "nl": "RGBW LEDSTRIP"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "images": {
+        "large": "drivers/rgbw_strip/assets/images/large.png",
+        "small": "drivers/rgbw_strip/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "FL 130 C",
+        "deviceId": 528,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the strip to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
+            "nl": "Zet de strip uit en weer aan.\n\nWordt de strip niet automatisch toegevoegd binnen 20 seconden, probeer dan de strip te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De strip zal knipperen om aan te geven dat hij is gereset."
           }
         }
       },
@@ -140,7 +211,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 162", "RB 165", "RB 175 W" ],
+        "productId": [ "RB 162", "RB 165", "RB 175 W", "RB 165", "BY 165" ],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -318,7 +389,10 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 178 T" ],
+        "productId": [
+          "BY 178 T",
+          "RB 178 T"
+        ],
         "deviceId": 544,
         "profileId": 49246,
         "learnmode": {
@@ -543,9 +617,7 @@
                        "en": "Buttonnumber pushed",
                        "nl": "Knopnummer gedrukt"
                    },
-                   "example": {
-                       "en": "+"
-                   }
+                   "example": 1
                },
                {
                   "name": "button_type",
@@ -555,7 +627,8 @@
                       "nl": "Type knop gedrukt"
                   },
                   "example": {
-                      "en": "on"
+                      "en": "on",
+                      "nl": "on"
                   }
                 }
              ],

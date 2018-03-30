@@ -2,27 +2,10 @@
 
 This app allows you to connect your INNR Devices to Homey
 
-# Supported Devices
+# Version 1.0.8
 
-* RS 122 GU10 Spot For your recessed spotlights
-* RB 175 W Tunable White Bulb
-* RB 162
-* RB 185 C RGBW Bulb
-* SP 110 Smart Plug. Metering not supported!
-* RC 110 Remote
-
-# Untested Devices
-
-* RB 165
-* DL 110 N
-* DL 110 W
-* SL 110 N
-* SL 110 M
-* SL 110 W
-* UC 110
-* FL 110
-* PL 110
-* ST 110
+* Added "BY XXX" models
+* Added the RGBW LED Strip FL 130 C
 
 # Remarks
 
@@ -39,23 +22,7 @@ Type (string): "- short", "+ short", on, off, "- long", "+ long", stop
 
 Slider on the remote in SCENES position, commands are broadcasted and applied to group 0. If i stand correct, this applies to all ZigBee devices, but could not test it, because i have no other ZigBee brands in use with Homey.
 
-Feedback, suggestions welcome!
+## Feedback:
 
-# Version 1.0.1
-
-Added RS 128 T tunable GU10
-
-SP 110 Removed polling of device. Added attribute report configuration instead with max report interval of 300 seconds
-
-# Version 1.0.2
-
-Added RB 178 T tunable Bulb
-
-# Version 1.0.3
-
-Added RS 128 T tunable GU10
-Added RB 148 T tunable E14
-
-# Version 1.0.4
-
-Added RB 145 dimmable e14
+Any requests please contact me on [Slack](https://athomcommunity.slack.com/team/kasteleman)    
+Please report issues at the [issues section on Github](https://github.com/kasteleman/com.innr/issues)
