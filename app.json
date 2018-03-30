@@ -211,7 +211,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 162", "RB 165", "RB 175 W", "RB 165", "BY 165" ],
+        "productId": [ "RB 162", "RB 165", "RB 175 W", "BY 165" ],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
