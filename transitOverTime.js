@@ -2,10 +2,7 @@
 
 const util = require('/node_modules/homey-meshdriver/lib/util');
 
-const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
-
-class RGBBulb extends ZigBeeLightDevice {
-
+module.exports = {
 	onFlowActionSetDimWithCustomTransitionTime(dimtype, dimwaarde, transitietijd) {
 		this.log('type_to_dim', parseInt(dimtype, 0));
 		this.log('dim_value', dimwaarde);
@@ -129,8 +126,6 @@ class RGBBulb extends ZigBeeLightDevice {
 		}
 
 		return true;
-	}
+	},
 
-}
-
-module.exports = RGBBulb;
+};

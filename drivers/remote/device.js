@@ -6,7 +6,7 @@ const ZigBeeDevice = require('homey-meshdriver').ZigBeeDevice;
 
 class remotescenes extends ZigBeeDevice {
 	onMeshInit() {
-		this.printNode();
+		// this.printNode();
 
 		// reportlisteners for the endpoints
 		this.registerReportListener('genLevelCtrl', 'moveToLevel', report => {
