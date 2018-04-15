@@ -297,6 +297,13 @@
         "onoff",
         "dim"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [ "RS 125", "RS 122" ],
