@@ -1,8 +1,8 @@
 'use strict';
 
-const FlowFixDimmableLightDevice = require('../../lib/FlowFixDimmableLightDevice');
+const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
 
-class TunableBulb extends FlowFixDimmableLightDevice {
+class TunableBulb extends ZigBeeLightDevice {
 
 }
 
