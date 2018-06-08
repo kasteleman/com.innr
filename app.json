@@ -77,7 +77,9 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "meter_power",
+        "measure_power"
       ],
       "mobile": {
         "components": [
@@ -85,14 +87,21 @@
             "id": "icon",
             "capabilities": [
               "onoff"
-        ]
-      },
-      {
-        "id": "toggle",
-        "capabilities": [
-          "onoff"
-        ]
-      }
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "meter_power",
+              "measure_power"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          }
       ]
     },
     "images": {
@@ -105,7 +114,6 @@
       "deviceId": 16,
       "profileId": 49246,
       "learnmode": {
-        "image": "drivers/smart_plug_sp120/assets/learnmode.svg",
         "instruction": {
           "en": "Press and hold the button on the side for 5 seconds and release.",
           "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
@@ -113,6 +121,24 @@
       }
     },
     "settings": [
+      {
+        "id": "report_interval",
+        "type": "number",
+        "label": {
+          "en": "Report Interval",
+          "nl": "Report Interval"
+        },
+        "hint": {
+          "en": "This setting determines the max report Interval.",
+          "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
+        },
+        "value": 60,
+        "attr": {
+          "step": 1,
+          "min": 30,
+          "max": 86400
+        }
+      }
     ]
   },
     {

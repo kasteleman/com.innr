@@ -10,7 +10,39 @@ class SmartPlugSP120 extends ZigBeeDevice {
 		this.printNode();
 		this.enableDebug();
 
-		if (this.hasCapability('onoff')) this.registerCapability('onoff', 'genOnOff');
+		this.node.endpoints[0].clusters.genTime.read('time')
+			.then(result => {
+				this.log('time: ', result);
+				if (result === 0) {
+					this.node.endpoints[0].clusters.genTime.write('time', 0x5B1991B9)
+						.then(res => {
+							this.log('write Time: ', res);
+						})
+						.catch(err => {
+							this.error('Error write Time: ', err);
+						});
+				}
+			})
+			.catch(err => {
+				this.log('could not read time');
+				this.log(err);
+			});
+
+		if (this.hasCapability('onoff')) {
+			this.registerCapability('onoff', 'genOnOff', {
+				getOpts: {
+					// pollInterval: 60000,
+					pollInterval: this.getSetting('report_interval') * 1000 || 60000,
+				},
+			});
+		}
+
+		// Report is send if status is changed
+		/* this.registerAttrReportListener('genOnOff', 'onOff', 1, this.getSetting('report_interval') || 60, 1, data => {
+			this.log('onOff', data);
+			this.setCapabilityValue('onoff', data === 1);
+		}, 0); */
+
 		if (this.hasCapability('meter_power')) {
 			this.registerCapability('meter_power', 'seMetering', {
 				get: 'currentSummDelivered',
@@ -21,48 +53,120 @@ class SmartPlugSP120 extends ZigBeeDevice {
 				report: 'currentSummDelivered',
 				getOpts: {
 					getOnStart: true,
+					pollInterval: 3600000,
 				},
-
 			});
 		}
 
 		if (this.hasCapability('measure_power')) {
-			this.registerCapability('measure_power', 'seMetering', {
-				get: 'instantaneousDemand',
+			this.registerCapability('measure_power', 'haElectricalMeasurement', {
+				get: 'activePower',
 				reportParser(value) {
+					this.log('value: ', value);
 					if (value < 0) return;
-					return value / 10;
+					return value;
 				},
-				report: 'instantaneousDemand',
+				report: 'activePower',
 				getOpts: {
 					getOnStart: true,
+					// pollInterval: 60000,
+					pollInterval: this.getSetting('report_interval') * 1000 || 60000,
 				},
 			});
 		}
 
-		// Report is send if status is changed or after 5 min
-		//this.registerAttrReportListener('genOnOff', 'onOff', 1, 300, 1, data => {
-			// this.log('onOff', data);
-			//this.setCapabilityValue('onoff', data === 1);
-		//}, 0);
 
 		// measure_power
-		// Report is send if status is changed with min of 2 Watt or after 5 min
-		this.registerAttrReportListener('seMetering', 'instantaneousDemand', 10, 300, 10, value => {
-			const parsedValue = value / 10;
+		// Report is send if status is changed
+		/* this.registerAttrReportListener('haElectricalMeasurement', 'activePower', 10, this.getSetting('report_interval') || 60, 10, value => {
+			const parsedValue = value;
 			if (value < 0) return;
 			// this.log('instantaneousDemand', value, parsedValue);
 			this.setCapabilityValue('measure_power', parsedValue);
-		}, 0);
+		}, 0); */
 
 		// meter_power
-		// Report is send in 10 min. Can not be changed.
-		this.registerAttrReportListener('seMetering', 'currentSummDelivered', 600, 600, [null, null], value => {
+		// Report is send if changed
+		/* this.registerAttrReportListener('seMetering', 'currentSummDelivered', 3600, 3600, [null, null], value => {
 			const parsedValue = Buffer.from(value).readUIntBE(0, 2) / 1000;
 			// this.log('currentSummDelivered', value, parsedValue);
 			this.setCapabilityValue('meter_power', parsedValue);
-		}, 0);
+		}, 0); */
 
+	}
+
+	onSettings(oldSettingsObj, newSettingsObj, changedKeysArr, callback) {
+
+		this.log(changedKeysArr);
+		this.log('newSettingsObj', newSettingsObj);
+		this.log('oldSettingsObj', oldSettingsObj);
+
+		// pollsetting report settings changed
+		if (changedKeysArr.includes('report_interval')) {
+			this.log('report_interval: ', newSettingsObj.report_interval);
+			callback(null, true);
+
+			this.registerCapability('onoff', 'genOnOff', {
+				getOpts: {
+					// pollInterval: 60000,
+					pollInterval: this.getSetting('report_interval') * 1000 || 60000,
+				},
+			});
+
+			this.registerCapability('meter_power', 'seMetering', {
+				get: 'currentSummDelivered',
+				reportParser(value) {
+					this.log('value: ', value);
+					return Buffer.from(value).readUIntBE(0, 2) / 1000;
+				},
+				report: 'currentSummDelivered',
+				getOpts: {
+					getOnStart: true,
+					pollInterval: 3600000,
+				},
+			});
+
+			this.registerCapability('measure_power', 'haElectricalMeasurement', {
+				get: 'activePower',
+				reportParser(value) {
+					this.log('value: ', value);
+					if (value < 0) return;
+					return value;
+				},
+				report: 'activePower',
+				getOpts: {
+					getOnStart: true,
+					// pollInterval: 60000,
+					pollInterval: this.getSetting('report_interval') * 1000 || 60000,
+				},
+			});
+
+			// Report is send if status is changed
+			/* this.registerAttrReportListener('genOnOff', 'onOff', 1, newSettingsObj.report_interval, 1, data => {
+				this.log('onOff', data);
+				this.setCapabilityValue('onoff', data === 1);
+			}, 0);
+
+			// measure_power
+			// Report is send if status is changed
+			this.registerAttrReportListener('haElectricalMeasurement', 'activePower', 10, newSettingsObj.report_interval, 10, value => {
+				const parsedValue = value;
+				if (value < 0) return;
+				// this.log('instantaneousDemand', value, parsedValue);
+				this.setCapabilityValue('measure_power', parsedValue);
+			}, 0);
+
+			// meter_power
+			// Report is changed.
+			this.registerAttrReportListener('seMetering', 'currentSummDelivered', 3600, 3600, value => {
+				const parsedValue = Buffer.from(value).readUIntBE(0, 2) / 1000;
+				// this.log('currentSummDelivered', value, parsedValue);
+				this.setCapabilityValue('meter_power', parsedValue);
+			}, 0); */
+
+		}	else {
+			callback(Homey.__("report interval settings error"), null);
+		}
 	}
 
 }
