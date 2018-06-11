@@ -15,7 +15,9 @@ Supported Devices:
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
 
-# Version 1.0.9
+# Version 1.1.0
+
+Changed README
 
 * Added SP 120
 
