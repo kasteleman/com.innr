@@ -1,11 +1,23 @@
-# INNR Zigbee
-
 This app allows you to connect your INNR Devices to Homey
 
-# Version 1.0.8
+Supported Devices:
 
-* Added "BY XXX" models
-* Added the RGBW LED Strip FL 130 C
+- SP 110, SP 120
+- RB 185 C, BY 185 C
+- FL 130 C
+- RB 162, RB 165, RB 175 W, BY 165
+- RB 145
+- RS 125, RS 122
+- RS 128 T
+- BY 178 T, RB 178 T
+- RB 148 T
+- PL 110
+- DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
+- UC 110, FL 110, ST 110
+
+# Version 1.0.9
+
+* Added SP 120
 
 # Remarks
 
