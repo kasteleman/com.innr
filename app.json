@@ -19,7 +19,7 @@
   },
   "athomForumDiscussionId": 3882,
   "contributors": {
-  "developers": [
+    "developers": [
       {
         "name": "Mark T",
         "email": "mtudor@icefusion.co.uk"
@@ -32,9 +32,9 @@
   },
   "contributing": {
     "donate": {
-        "paypal": {
-            "username": "kasteleman"
-        }
+      "paypal": {
+        "username": "kasteleman"
+      }
     }
   },
   "images": {
@@ -103,41 +103,41 @@
             ]
           }
       ]
-    },
-    "images": {
-      "large": "drivers/smart_plug_sp120/assets/images/large.png",
-      "small": "drivers/smart_plug_sp120/assets/images/small.png"
-    },
-    "zigbee": {
-      "manufacturerName": "innr",
-      "productId": "SP 120",
-      "deviceId": 16,
-      "profileId": 49246,
-      "learnmode": {
-        "instruction": {
-          "en": "Press and hold the button on the side for 5 seconds and release.",
-          "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+      },
+      "images": {
+        "large": "drivers/smart_plug_sp120/assets/images/large.png",
+        "small": "drivers/smart_plug_sp120/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "SP 120",
+        "deviceId": 16,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the button on the side for 5 seconds and release.",
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+          }
         }
-      }
-    },
-    "settings": [
-      {
-        "id": "report_interval",
-        "type": "number",
-        "label": {
-          "en": "Report Interval",
-          "nl": "Report Interval"
-        },
-        "hint": {
-          "en": "This setting determines the max report Interval.",
-          "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
-        },
-        "value": 60,
-        "attr": {
-          "step": 1,
-          "min": 30,
-          "max": 86400
-        }
+      },
+      "settings": [
+        {
+          "id": "report_interval",
+          "type": "number",
+          "label": {
+            "en": "Report Interval",
+            "nl": "Report Interval"
+          },
+          "hint": {
+            "en": "This setting determines the max report Interval.",
+            "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 30,
+            "max": 86400
+          }
       }
     ]
   },
@@ -183,6 +183,16 @@
         "light_temperature",
         "light_mode"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "images": {
         "large": "drivers/rgbw_bulb/assets/images/large.png",
         "small": "drivers/rgbw_bulb/assets/images/small.png"
@@ -283,7 +293,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 162", "RB 165", "RB 175 W", "BY 165" ],
+        "productId": ["RB 162", "RB 165", "RB 175 W", "BY 165"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -327,7 +337,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 145" ],
+        "productId": ["RB 145"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -371,7 +381,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RS 125", "RS 122" ],
+        "productId": ["RS 125", "RS 122"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -416,7 +426,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RS 128 T" ],
+        "productId": ["RS 128 T"],
         "deviceId": 544,
         "profileId": 49246,
         "learnmode": {
@@ -509,7 +519,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 148 T" ],
+        "productId": ["RB 148 T"],
         "deviceId": 544,
         "profileId": 49246,
         "learnmode": {
@@ -553,7 +563,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "PL 110" ],
+        "productId": ["PL 110"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -597,7 +607,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W" ],
+        "productId": ["DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -641,7 +651,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "UC 110", "FL 110", "ST 110" ],
+        "productId": ["UC 110", "FL 110", "ST 110"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -675,91 +685,91 @@
   ],
   "flow": {
     "triggers": [
-         {
-             "id": "remote_button_pressed",
-             "title": {
-                 "en": "Remote button pressed",
-                 "nl": "Remote knop gedrukt"
-             },
-             "tokens": [
-               {
-                   "name": "button_number",
-                   "type": "number",
-                   "title": {
-                       "en": "Buttonnumber pushed",
-                       "nl": "Knopnummer gedrukt"
-                   },
-                   "example": 1
+      {
+        "id": "remote_button_pressed",
+        "title": {
+          "en": "Remote button pressed",
+          "nl": "Remote knop gedrukt"
+        },
+        "tokens": [
+          {
+            "name": "button_number",
+            "type": "number",
+            "title": {
+              "en": "Buttonnumber pushed",
+              "nl": "Knopnummer gedrukt"
+            },
+            "example": 1
                },
-               {
-                  "name": "button_type",
-                  "type": "string",
-                  "title": {
-                      "en": "Type of button pushed",
-                      "nl": "Type knop gedrukt"
-                  },
-                  "example": {
-                      "en": "on",
-                      "nl": "on"
-                  }
+          {
+            "name": "button_type",
+            "type": "string",
+            "title": {
+              "en": "Type of button pushed",
+              "nl": "Type knop gedrukt"
+            },
+            "example": {
+              "en": "on",
+              "nl": "on"
+            }
                 }
              ],
-             "args": [
-                 {
-                     "name": "device",
-                     "type": "device",
-                     "filter": "driver_id=remote"
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=remote"
                  },
-                 {
-                   "name": "button",
-                   "type": "dropdown",
-                   "values": [
-                     {
-                       "id": "1",
-                       "label": {
-                         "en": "Lights button 1",
-                         "nl": "Lights knop 1"
-                       }
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Lights button 1",
+                  "nl": "Lights knop 1"
+                }
                      },
-                     {
-                       "id": "2",
-                       "label": {
-                         "en": "Lights button 2",
-                         "nl": "Lights knop 2"
-                       }
+              {
+                "id": "2",
+                "label": {
+                  "en": "Lights button 2",
+                  "nl": "Lights knop 2"
+                }
                      },
-                     {
-                       "id": "3",
-                       "label": {
-                         "en": "Lights button 3",
-                         "nl": "Lights knop 3"
-                       }
+              {
+                "id": "3",
+                "label": {
+                  "en": "Lights button 3",
+                  "nl": "Lights knop 3"
+                }
                      },
-                     {
-                       "id": "4",
-                       "label": {
-                         "en": "Lights button 4",
-                         "nl": "Lights knop 4"
-                       }
+              {
+                "id": "4",
+                "label": {
+                  "en": "Lights button 4",
+                  "nl": "Lights knop 4"
+                }
                      },
-                     {
-                       "id": "5",
-                       "label": {
-                         "en": "Lights button 5",
-                         "nl": "Lights knop 5"
-                       }
+              {
+                "id": "5",
+                "label": {
+                  "en": "Lights button 5",
+                  "nl": "Lights knop 5"
+                }
                      },
-                     {
-                       "id": "6",
-                       "label": {
-                         "en": "Lights button 6",
-                         "nl": "Lights knop 6"
-                       }
+              {
+                "id": "6",
+                "label": {
+                  "en": "Lights button 6",
+                  "nl": "Lights knop 6"
+                }
                      }
                    ]
                  }
              ]
          }
      ]
-   }
+  }
 }
