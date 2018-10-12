@@ -2,6 +2,7 @@ This app allows you to connect your INNR Devices to Homey
 
 Supported Devices:
 
+- RB 285 C, BY 185 C
 - SP 110, SP 120
 - RB 185 C, BY 185 C
 - FL 130 C
@@ -14,6 +15,11 @@ Supported Devices:
 - PL 110
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
+
+# Version 1.1.1
+
+Added Zigbee 3.0 devices RB 285 C, BY 285 C with attribute reporting for on/off and dim
+Updated meshdriver
 
 # Version 1.1.0
 
