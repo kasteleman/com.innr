@@ -16,6 +16,17 @@ Supported Devices:
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
 
+# Version 1.1.2
+
+Added Zigbee 3.0 devices:
+
+RB 265 Smart bulb white E27
+BY 265 Smart bulb white B22
+RB 245 Smart candle white E14
+RB 248 T Smart candle comfort (tunable) E14
+
+Added Dim duration
+
 # Version 1.1.1
 
 Added Zigbee 3.0 devices RB 285 C, BY 285 C with attribute reporting for on/off and dim

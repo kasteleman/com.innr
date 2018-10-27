@@ -2,27 +2,51 @@
 
 const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
 
+const util = require('./../../node_modules/homey-meshdriver/lib/util');
+
 class RGBBulbZ3 extends ZigBeeLightDevice {
 
   async onMeshInit() {
+
    		await super.onMeshInit();
    		// enable debugging
-   		//this.enableDebug();
+   		this.enableDebug();
 
    		// print the node's info to the console
-   		//this.printNode();
+   		this.printNode();
 
-      this.registerAttrReportListener('genOnOff', 'onOff', 1, 300, 1, value => {
-        this.log('onoff', value);
-        this.setCapabilityValue('onoff', value === 1);
-      }, 0);
+      this.log('GreenPowerProxy endpoint: ', this.getClusterEndpoint('genGreenPowerProxy'));
 
-      this.registerAttrReportListener('genLevelCtrl', 'currentLevel', 3, 300, 3, value => {
-        this.log('dim report', value);
-        this.setCapabilityValue('dim', value / 254);
-      }, 0);
+      if (this.getClusterEndpoint('genGreenPowerProxy') !== 0) {
+        this.registerAttrReportListener('genOnOff', 'onOff', 1, 300, 1, value => {
+          this.log('onoff', value);
+          this.setCapabilityValue('onoff', value === 1);
+        }, 0);
+
+        this.registerAttrReportListener('genLevelCtrl', 'currentLevel', 3, 300, 3, value => {
+          this.log('dim report', value);
+          this.setCapabilityValue('dim', value / 254);
+        }, 0);
+
+        this.registerAttrReportListener('lightingColorCtrl', 'currentHue', 3, 300, 3, value => {
+          this.log('HUE report', value);
+          this.setCapabilityValue('light_hue', value / 254);
+        }, 0);
+
+        this.registerAttrReportListener('lightingColorCtrl', 'currentSaturation', 3, 300, 3, value => {
+          this.log('Saturation report', value);
+          this.setCapabilityValue('light_saturation', value / 254);
+        }, 0);
+
+        this.registerAttrReportListener('lightingColorCtrl', 'colorTemperature', 3, 300, 3, value => {
+          this.log('light_temperature report', value);
+          this.setCapabilityValue('light_temperature', util.mapValueRange(this._colorTempMin, this._colorTempMax, 0, 1, value));
+        }, 0);
+
+      }
 
   }
+
 }
 /*
  [rgbw_bulb_z3] [0] ZigBeeDevice has been inited

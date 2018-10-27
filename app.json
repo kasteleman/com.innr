@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.1",
+  "version": "1.1.2",
   "compatibility": ">=1.5.4",
   "sdk": 2,
   "author": {
@@ -183,6 +183,16 @@
         "light_temperature",
         "light_mode"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "images": {
         "large": "drivers/rgbw_bulb/assets/images/large.png",
         "small": "drivers/rgbw_bulb/assets/images/small.png"
@@ -234,6 +244,16 @@
         "light_temperature",
         "light_mode"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "images": {
         "large": "drivers/rgbw_bulb_z3/assets/images/large.png",
         "small": "drivers/rgbw_bulb_z3/assets/images/small.png"
@@ -285,6 +305,16 @@
         "light_temperature",
         "light_mode"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "images": {
         "large": "drivers/rgbw_strip/assets/images/large.png",
         "small": "drivers/rgbw_strip/assets/images/small.png"
@@ -332,11 +362,21 @@
         "onoff",
         "dim"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 162", "RB 165", "RB 175 W", "BY 165" ],
-        "deviceId": 256,
-        "profileId": 49246,
+        "productId": [ "RB 162", "RB 165", "RB 175 W", "BY 165", "RB 265", "BY 265" ],
+        "deviceId": [256, 257],
+        "profileId": [49246, 260],
         "learnmode": {
           "image": "/drivers/dimmable_bulb/assets/icon.svg",
           "instruction": {
@@ -376,11 +416,21 @@
         "onoff",
         "dim"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 145" ],
-        "deviceId": 256,
-        "profileId": 49246,
+        "productId": [ "RB 145", "RB 245" ],
+        "deviceId": [256, 257],
+        "profileId": [49246, 260],
         "learnmode": {
           "image": "/drivers/dimmable_e14/assets/icon.svg",
           "instruction": {
@@ -420,6 +470,16 @@
         "onoff",
         "dim"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [ "RS 125", "RS 122" ],
@@ -465,6 +525,16 @@
         "dim",
         "light_temperature"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [ "RS 128 T" ],
@@ -510,6 +580,16 @@
         "dim",
         "light_temperature"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [
@@ -558,11 +638,21 @@
         "dim",
         "light_temperature"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 148 T" ],
-        "deviceId": 544,
-        "profileId": 49246,
+        "productId": [ "RB 148 T", "RB 248 T" ],
+        "deviceId": [544, 268],
+        "profileId": [49246, 260],
         "learnmode": {
           "image": "/drivers/tunable_e14/assets/icon.svg",
           "instruction": {
