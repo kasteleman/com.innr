@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.2",
+  "version": "1.1.3",
   "compatibility": ">=1.5.4",
   "sdk": 2,
   "author": {
@@ -19,11 +19,15 @@
   },
   "athomForumDiscussionId": 3882,
   "contributors": {
-  "developers": [
+    "developers": [
       {
         "name": "Mark T",
         "email": "mtudor@icefusion.co.uk"
       },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
+		  },
       {
         "name": "Kasteleman",
         "email": "kasteleman@gmail.com"
@@ -32,9 +36,9 @@
   },
   "contributing": {
     "donate": {
-        "paypal": {
-            "username": "kasteleman"
-        }
+      "paypal": {
+        "username": "kasteleman"
+      }
     }
   },
   "images": {
@@ -103,41 +107,41 @@
             ]
           }
       ]
-    },
-    "images": {
-      "large": "drivers/smart_plug_sp120/assets/images/large.png",
-      "small": "drivers/smart_plug_sp120/assets/images/small.png"
-    },
-    "zigbee": {
-      "manufacturerName": "innr",
-      "productId": "SP 120",
-      "deviceId": 16,
-      "profileId": 49246,
-      "learnmode": {
-        "instruction": {
-          "en": "Press and hold the button on the side for 5 seconds and release.",
-          "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+      },
+      "images": {
+        "large": "drivers/smart_plug_sp120/assets/images/large.png",
+        "small": "drivers/smart_plug_sp120/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "SP 120",
+        "deviceId": 16,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the button on the side for 5 seconds and release.",
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+          }
         }
-      }
-    },
-    "settings": [
-      {
-        "id": "report_interval",
-        "type": "number",
-        "label": {
-          "en": "Report Interval",
-          "nl": "Report Interval"
-        },
-        "hint": {
-          "en": "This setting determines the max report Interval.",
-          "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
-        },
-        "value": 60,
-        "attr": {
-          "step": 1,
-          "min": 30,
-          "max": 86400
-        }
+      },
+      "settings": [
+        {
+          "id": "report_interval",
+          "type": "number",
+          "label": {
+            "en": "Report Interval",
+            "nl": "Report Interval"
+          },
+          "hint": {
+            "en": "This setting determines the max report Interval.",
+            "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
+          },
+          "value": 60,
+          "attr": {
+            "step": 1,
+            "min": 30,
+            "max": 86400
+          }
       }
     ]
   },
@@ -374,7 +378,7 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 162", "RB 165", "RB 175 W", "BY 165", "RB 265", "BY 265" ],
+        "productId": ["RB 162", "RB 165", "RB 175 W", "BY 165", "RB 265", "BY 265"],
         "deviceId": [256, 257],
         "profileId": [49246, 260],
         "learnmode": {
@@ -428,7 +432,7 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 145", "RB 245" ],
+        "productId": ["RB 145", "RB 245"],
         "deviceId": [256, 257],
         "profileId": [49246, 260],
         "learnmode": {
@@ -482,7 +486,7 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RS 125", "RS 122" ],
+        "productId": ["RS 125", "RS 122"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -537,7 +541,7 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RS 128 T" ],
+        "productId": ["RS 128 T"],
         "deviceId": 544,
         "profileId": 49246,
         "learnmode": {
@@ -650,7 +654,7 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "RB 148 T", "RB 248 T" ],
+        "productId": ["RB 148 T", "RB 248 T"],
         "deviceId": [544, 268],
         "profileId": [49246, 260],
         "learnmode": {
@@ -694,7 +698,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "PL 110" ],
+        "productId": ["PL 110"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -738,7 +742,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W" ],
+        "productId": ["DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -782,7 +786,7 @@
       ],
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": [ "UC 110", "FL 110", "ST 110" ],
+        "productId": ["UC 110", "FL 110", "ST 110"],
         "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
@@ -816,91 +820,156 @@
   ],
   "flow": {
     "triggers": [
-         {
-             "id": "remote_button_pressed",
-             "title": {
-                 "en": "Remote button pressed",
-                 "nl": "Remote knop gedrukt"
-             },
-             "tokens": [
-               {
-                   "name": "button_number",
-                   "type": "number",
-                   "title": {
-                       "en": "Buttonnumber pushed",
-                       "nl": "Knopnummer gedrukt"
-                   },
-                   "example": 1
+      {
+        "id": "remote_button_pressed",
+        "title": {
+          "en": "Remote button pressed",
+          "nl": "Remote knop gedrukt"
+        },
+        "tokens": [
+          {
+            "name": "button_number",
+            "type": "number",
+            "title": {
+              "en": "Buttonnumber pushed",
+              "nl": "Knopnummer gedrukt"
+            },
+            "example": 1
                },
-               {
-                  "name": "button_type",
-                  "type": "string",
-                  "title": {
-                      "en": "Type of button pushed",
-                      "nl": "Type knop gedrukt"
-                  },
-                  "example": {
-                      "en": "on",
-                      "nl": "on"
-                  }
+          {
+            "name": "button_type",
+            "type": "string",
+            "title": {
+              "en": "Type of button pushed",
+              "nl": "Type knop gedrukt"
+            },
+            "example": {
+              "en": "on",
+              "nl": "on"
+            }
                 }
              ],
-             "args": [
-                 {
-                     "name": "device",
-                     "type": "device",
-                     "filter": "driver_id=remote"
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=remote"
                  },
-                 {
-                   "name": "button",
-                   "type": "dropdown",
-                   "values": [
-                     {
-                       "id": "1",
-                       "label": {
-                         "en": "Lights button 1",
-                         "nl": "Lights knop 1"
-                       }
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Lights button 1",
+                  "nl": "Lights knop 1"
+                }
                      },
-                     {
-                       "id": "2",
-                       "label": {
-                         "en": "Lights button 2",
-                         "nl": "Lights knop 2"
-                       }
+              {
+                "id": "2",
+                "label": {
+                  "en": "Lights button 2",
+                  "nl": "Lights knop 2"
+                }
                      },
-                     {
-                       "id": "3",
-                       "label": {
-                         "en": "Lights button 3",
-                         "nl": "Lights knop 3"
-                       }
+              {
+                "id": "3",
+                "label": {
+                  "en": "Lights button 3",
+                  "nl": "Lights knop 3"
+                }
                      },
-                     {
-                       "id": "4",
-                       "label": {
-                         "en": "Lights button 4",
-                         "nl": "Lights knop 4"
-                       }
+              {
+                "id": "4",
+                "label": {
+                  "en": "Lights button 4",
+                  "nl": "Lights knop 4"
+                }
                      },
-                     {
-                       "id": "5",
-                       "label": {
-                         "en": "Lights button 5",
-                         "nl": "Lights knop 5"
-                       }
+              {
+                "id": "5",
+                "label": {
+                  "en": "Lights button 5",
+                  "nl": "Lights knop 5"
+                }
                      },
-                     {
-                       "id": "6",
-                       "label": {
-                         "en": "Lights button 6",
-                         "nl": "Lights knop 6"
-                       }
+              {
+                "id": "6",
+                "label": {
+                  "en": "Lights button 6",
+                  "nl": "Lights knop 6"
+                }
                      }
                    ]
                  }
              ]
          }
+     ],
+    "actions": [{
+        "id": "action_DIM_startLevelChange",
+        "title": {
+          "en": "Start dim level change",
+          "nl": "Start helderheid transitie"
+        },
+        "hint": {
+          "en": "This action card will trigger the start of a dim level change in the set direction. \nRate (for the change in dim-level from 0-100%) can be set by using the range slider.",
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie snelheid (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de slider."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10"
+       },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Increase dim level",
+                  "nl": "Toenemende helderheid"
+                }
+             },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Decrease dim level",
+                  "nl": "Afnemende helderheid"
+                }
+             }
+           ]
+       },
+          {
+            "name": "rate",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+       }
+
      ]
-   }
+     },
+      {
+        "id": "action_DIM_stopLevelChange",
+        "title": {
+          "en": "Stop dim level change",
+          "nl": "Stop helderheid transitie"
+        },
+        "hint": {
+          "en": "This action card will trigger the stop of a dim level change.",
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10"
+     }]
+     }]
+  }
 }
