@@ -16,6 +16,10 @@ Supported Devices:
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
 
+# Version 1.1.3
+
+Add start dim-level change and stop dim-level change action cards for all applicable devices   
+
 # Version 1.1.2
 
 Added Zigbee 3.0 devices:
