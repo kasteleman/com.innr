@@ -2,6 +2,8 @@
 
 const ZigBeeLightDevice = require('homey-meshdriver').ZigBeeLightDevice;
 
+const util = require('./../../node_modules/homey-meshdriver/lib/util');
+
 class TunableGU10 extends ZigBeeLightDevice {
 
   async onMeshInit() {

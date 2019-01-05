@@ -13,8 +13,13 @@ Supported Devices:
 - BY 178 T, RB 178 T
 - RB 148 T
 - PL 110
+- SL 110
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
+
+# Version 1.1.5
+
+Added SL 110 Recessed Spot Light
 
 # Version 1.1.4
 

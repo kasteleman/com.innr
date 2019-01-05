@@ -9,10 +9,10 @@ class DimmableGU10 extends ZigBeeLightDevice {
 
       await super.onMeshInit();
       // enable debugging
-      this.enableDebug();
+      // this.enableDebug();
 
       // print the node's info to the console
-      this.printNode();
+      // this.printNode();
 
       this.log('GreenPowerProxy endpoint: ', this.getClusterEndpoint('genGreenPowerProxy'));
 

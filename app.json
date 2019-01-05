@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.4",
+  "version": "1.1.5",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -542,7 +542,7 @@
       "zigbee": {
         "manufacturerName": "innr",
         "productId": ["RS 128 T", "RS 228 T"],
-        "deviceId": [544, 545],
+        "deviceId": [544, 268],
         "profileId": [49246, 260],
         "learnmode": {
           "image": "/drivers/tunable_gu10/assets/icon.svg",
@@ -712,6 +712,50 @@
       "images": {
         "large": "/drivers/dimmable_puck/assets/images/large.png",
         "small": "/drivers/dimmable_puck/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "RSL110V2",
+      "name": {
+        "en": "Recessed Spot Light",
+        "nl": "Recessed Spot Light"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": ["RSL 110"],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/RSL110V2/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/RSL110V2/assets/images/large.png",
+        "small": "/drivers/RSL110V2/assets/images/small.png"
       },
       "settings": [
         {
