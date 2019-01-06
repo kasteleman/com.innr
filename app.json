@@ -748,8 +748,8 @@
         "learnmode": {
           "image": "/drivers/RSL110V2/assets/icon.svg",
           "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "en": "Connect the trafo to power.\n\nIf pairing does not automatically start within 20 seconds, try using a paperclip like stated in the manual to start the joining or reset the device.",
+            "nl": "Voorzie de trafo van stroom.\n\nStart het toevoegen niet automatisch binnen 20 seconden, probeer dan zoals aangegeven in de gebruikershandleiding middels een paperclip toevoegen te starten of te resetten."
           }
         }
       },
