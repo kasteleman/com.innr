@@ -10,12 +10,19 @@ Supported Devices:
 - RB 145
 - RS 125, RS 122, RS 225
 - RS 128 T, RS 228 T
-- BY 178 T, RB 178 T
+- BY 178 T, RB 178 T, RB 278 T
 - RB 148 T
 - PL 110
 - SL 110
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
+
+# Version 1.1.6
+
+Added Zigbee 3.0 RB 278 T comfort E27
+
+Add start dim-level change and stop dim-level change action for SL 110
+
 
 # Version 1.1.5
 

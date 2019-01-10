@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.5",
+  "version": "1.1.6",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -598,10 +598,11 @@
         "manufacturerName": "innr",
         "productId": [
           "BY 178 T",
-          "RB 178 T"
+          "RB 178 T",
+          "RB 278 T"
         ],
-        "deviceId": 544,
-        "profileId": 49246,
+        "deviceId": [544, 268],
+        "profileId": [49246, 260],
         "learnmode": {
           "image": "/drivers/tunable_bulb/assets/icon.svg",
           "instruction": {
@@ -964,7 +965,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10"
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
        },
           {
             "name": "direction",
@@ -1012,7 +1013,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10"
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
      }]
      }]
   }
