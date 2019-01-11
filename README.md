@@ -2,31 +2,37 @@ This app allows you to connect your INNR Devices to Homey
 
 Supported Devices:
 
-- RB 285 C, BY 185 C
+- RB 285 C, BY 285 C
+- RB 265, BY 265
 - SP 110, SP 120
 - RB 185 C, BY 185 C
 - FL 130 C
 - RB 162, RB 165, RB 175 W, BY 165
-- RB 145
+- RB 145, B 245
 - RS 125, RS 122, RS 225
 - RS 128 T, RS 228 T
 - BY 178 T, RB 178 T, RB 278 T
-- RB 148 T
+- RB 148 T, RB 248 T
 - PL 110
-- SL 110
+- RSL 110
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
+- RC 110
+
+# Version 1.1.7
+
+Readme corrected
 
 # Version 1.1.6
 
 Added Zigbee 3.0 RB 278 T comfort E27
 
-Add start dim-level change and stop dim-level change action for SL 110
+Add start dim-level change and stop dim-level change action for RSL 110
 
 
 # Version 1.1.5
 
-Added SL 110 Recessed Spot Light
+Added RSL 110 Recessed Spot Light
 
 # Version 1.1.4
 
