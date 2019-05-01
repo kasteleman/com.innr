@@ -48,7 +48,7 @@ class SmartPlugSP120 extends ZigBeeDevice {
 				get: 'currentSummDelivered',
 				reportParser(value) {
 					this.log('value: ', value);
-					return Buffer.from(value).readUIntBE(0, 2) / 1000;
+					return value[1]/100;
 				},
 				report: 'currentSummDelivered',
 				getOpts: {
@@ -117,7 +117,7 @@ class SmartPlugSP120 extends ZigBeeDevice {
 				get: 'currentSummDelivered',
 				reportParser(value) {
 					this.log('value: ', value);
-					return Buffer.from(value).readUIntBE(0, 2) / 1000;
+					return value[1]/100;
 				},
 				report: 'currentSummDelivered',
 				getOpts: {
