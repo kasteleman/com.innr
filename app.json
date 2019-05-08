@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.7",
+  "version": "1.1.8",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -265,6 +265,67 @@
       "zigbee": {
         "manufacturerName": "innr",
         "productId": ["RB 285 C", "BY 285 C"],
+        "deviceId": 269,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time",
+            "nl": "Overgangstijd"
+          },
+          "hint": {
+            "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 6553
+          }
+        }
+      ]
+    },
+    {
+      "id": "rgbw_e14",
+      "name": {
+        "en": "RGBW E14 Bulb",
+        "nl": "RGBW E14 Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "images": {
+        "large": "drivers/rgbw_e14/assets/images/large.png",
+        "small": "drivers/rgbw_e14/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": ["RB 250 C"],
         "deviceId": 269,
         "profileId": 260,
         "learnmode": {
@@ -961,7 +1022,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
        },
           {
             "name": "direction",
@@ -1009,7 +1070,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
      }]
      }]
   }
