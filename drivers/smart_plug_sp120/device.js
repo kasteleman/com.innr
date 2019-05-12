@@ -37,18 +37,13 @@ class SmartPlugSP120 extends ZigBeeDevice {
 			});
 		}
 
-		// Report is send if status is changed
-		/* this.registerAttrReportListener('genOnOff', 'onOff', 1, this.getSetting('report_interval') || 60, 1, data => {
-			this.log('onOff', data);
-			this.setCapabilityValue('onoff', data === 1);
-		}, 0); */
-
 		if (this.hasCapability('meter_power')) {
 			this.registerCapability('meter_power', 'seMetering', {
 				get: 'currentSummDelivered',
 				reportParser(value) {
 					this.log('value: ', value);
-					return Buffer.from(value).readUIntBE(0, 2) / 1000;
+					// return Buffer.from(value).readUIntBE(0, 2) / 1000;
+					return value[1] / 100;
 				},
 				report: 'currentSummDelivered',
 				getOpts: {
@@ -75,24 +70,6 @@ class SmartPlugSP120 extends ZigBeeDevice {
 			});
 		}
 
-
-		// measure_power
-		// Report is send if status is changed
-		/* this.registerAttrReportListener('haElectricalMeasurement', 'activePower', 10, this.getSetting('report_interval') || 60, 10, value => {
-			const parsedValue = value;
-			if (value < 0) return;
-			// this.log('instantaneousDemand', value, parsedValue);
-			this.setCapabilityValue('measure_power', parsedValue);
-		}, 0); */
-
-		// meter_power
-		// Report is send if changed
-		/* this.registerAttrReportListener('seMetering', 'currentSummDelivered', 3600, 3600, [null, null], value => {
-			const parsedValue = Buffer.from(value).readUIntBE(0, 2) / 1000;
-			// this.log('currentSummDelivered', value, parsedValue);
-			this.setCapabilityValue('meter_power', parsedValue);
-		}, 0); */
-
 	}
 
 	onSettings(oldSettingsObj, newSettingsObj, changedKeysArr, callback) {
@@ -117,7 +94,8 @@ class SmartPlugSP120 extends ZigBeeDevice {
 				get: 'currentSummDelivered',
 				reportParser(value) {
 					this.log('value: ', value);
-					return Buffer.from(value).readUIntBE(0, 6) / 1000;
+					// return Buffer.from(value).readUIntBE(0, 2) / 1000;
+					return value[1] / 100;
 				},
 				report: 'currentSummDelivered',
 				getOpts: {
@@ -140,29 +118,6 @@ class SmartPlugSP120 extends ZigBeeDevice {
 					pollInterval: this.getSetting('report_interval') * 1000 || 60000,
 				},
 			});
-
-			// Report is send if status is changed
-			/* this.registerAttrReportListener('genOnOff', 'onOff', 1, newSettingsObj.report_interval, 1, data => {
-				this.log('onOff', data);
-				this.setCapabilityValue('onoff', data === 1);
-			}, 0);
-
-			// measure_power
-			// Report is send if status is changed
-			this.registerAttrReportListener('haElectricalMeasurement', 'activePower', 10, newSettingsObj.report_interval, 10, value => {
-				const parsedValue = value;
-				if (value < 0) return;
-				// this.log('instantaneousDemand', value, parsedValue);
-				this.setCapabilityValue('measure_power', parsedValue);
-			}, 0);
-
-			// meter_power
-			// Report is changed.
-			this.registerAttrReportListener('seMetering', 'currentSummDelivered', 3600, 3600, value => {
-				const parsedValue = Buffer.from(value).readUIntBE(0, 2) / 1000;
-				// this.log('currentSummDelivered', value, parsedValue);
-				this.setCapabilityValue('meter_power', parsedValue);
-			}, 0); */
 
 		}	else {
 			callback(Homey.__("report interval settings error"), null);
