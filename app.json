@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.8",
+  "version": "1.1.9",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -453,6 +453,114 @@
       "images": {
         "large": "/drivers/dimmable_bulb/assets/images/large.png",
         "small": "/drivers/dimmable_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "filament_bulb_vintage",
+      "name": {
+        "en": "Vintage filament Bulb",
+        "nl": "Vintage filament Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": ["RF 263", "BF 263"],
+        "deviceId": [257],
+        "profileId": [260],
+        "learnmode": {
+          "image": "/drivers/filament_bulb_vintage/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/filament_bulb_vintage/assets/images/large.png",
+        "small": "/drivers/filament_bulb_vintage/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "filament_bulb_white",
+      "name": {
+        "en": "White filament Bulb",
+        "nl": "White filament Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": ["RF 265", "BF 265"],
+        "deviceId": [257],
+        "profileId": [260],
+        "learnmode": {
+          "image": "/drivers/filament_bulb_white/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/filament_bulb_white/assets/images/large.png",
+        "small": "/drivers/filament_bulb_white/assets/images/small.png"
       },
       "settings": [
         {
@@ -1022,7 +1130,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white"
        },
           {
             "name": "direction",
@@ -1070,7 +1178,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2"
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2,filament_bulb_vintage,filament_bulb_white"
      }]
      }]
   }

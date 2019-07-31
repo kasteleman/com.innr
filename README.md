@@ -5,6 +5,8 @@ Supported Devices:
 - RB 285 C, BY 285 C
 - RB 265, BY 265
 - RB 250 C,
+- RF 263, BF 263
+- RF 265, BF 265
 - SP 110, SP 120
 - RB 185 C, BY 185 C
 - FL 130 C
@@ -19,6 +21,12 @@ Supported Devices:
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
 - RC 110
+
+# Version 1.1.9
+
+Added Zigbee 3.0 RF 263, BF 263 Smart filament bulb vintage
+
+Added Zigbee 3.0 RF 265, BF 265 Smart filament bulb white
 
 # Version 1.1.8
 
