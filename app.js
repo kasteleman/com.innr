@@ -59,6 +59,7 @@ class INNRZigbeeApp extends Homey.App {
 			return Promise.reject('unknown_error');
 		}
 	}
+
 }
 
 module.exports = INNRZigbeeApp;

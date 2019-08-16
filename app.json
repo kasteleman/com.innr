@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.9",
+  "version": "1.1.10",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -456,7 +456,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -510,11 +510,24 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
             "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        },
+        {
+          "id": "On_Off_TransitionTime",
+          "type": "number",
+          "label": {
+            "nl": "Aan/Uit Transitie tijd in seconden",
+            "en": "On/Off Transition time in seconds"
           },
           "value": 1,
           "attr": {
@@ -564,11 +577,24 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
             "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        },
+        {
+          "id": "On_Off_TransitionTime",
+          "type": "number",
+          "label": {
+            "nl": "Aan/Uit Transitie tijd in seconden",
+            "en": "On/Off Transition time in seconds"
           },
           "value": 1,
           "attr": {
@@ -618,7 +644,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -672,7 +698,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -727,7 +753,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -782,7 +808,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -837,7 +863,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -881,7 +907,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -925,7 +951,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -969,7 +995,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
@@ -1013,7 +1039,7 @@
       },
       "settings": [
         {
-          "id": "transtime",
+          "id": "transition_time",
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",

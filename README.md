@@ -22,6 +22,12 @@ Supported Devices:
 - UC 110, FL 110, ST 110
 - RC 110
 
+# Version 1.1.10
+
+Fixed transitiontime for dimmable devices
+
+Added onOffTransitionTime in device settings for filament bulbs
+
 # Version 1.1.9
 
 Added Zigbee 3.0 RF 263, BF 263 Smart filament bulb vintage
