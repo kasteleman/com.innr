@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.10",
+  "version": "1.1.11",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -144,6 +144,52 @@
           }
       }
     ]
+  },
+  {
+    "id": "smart_plug_sp222",
+    "name": {
+      "en": "SP222",
+      "nl": "SP222"
+    },
+    "class": "socket",
+    "capabilities": [
+      "onoff",
+      "meter_power",
+      "measure_power"
+    ],
+    "mobile": {
+      "components": [
+        {
+          "id": "icon",
+          "capabilities": [
+            "onoff"
+          ]
+        },
+        {
+          "id": "toggle",
+          "capabilities": [
+            "onoff"
+          ]
+        }
+    ]
+    },
+    "images": {
+      "large": "drivers/smart_plug_sp222/assets/images/large.png",
+      "small": "drivers/smart_plug_sp222/assets/images/small.png"
+    },
+    "zigbee": {
+      "manufacturerName": "innr",
+      "productId": "SP 222",
+      "deviceId": 266,
+      "profileId": 260,
+      "learnmode": {
+        "instruction": {
+          "en": "Press and hold the button on the side for 5 seconds and release.",
+          "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+        }
+      }
+    },
+    "settings": []
   },
     {
       "id": "remote",

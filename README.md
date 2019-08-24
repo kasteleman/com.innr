@@ -7,7 +7,7 @@ Supported Devices:
 - RB 250 C,
 - RF 263, BF 263
 - RF 265, BF 265
-- SP 110, SP 120
+- SP 110, SP 120, SP 222
 - RB 185 C, BY 185 C
 - FL 130 C
 - RB 162, RB 165, RB 175 W, BY 165
@@ -21,6 +21,10 @@ Supported Devices:
 - DL 110 N, DL 110 W, SL 110 N, SL 110 M, SL 110 W
 - UC 110, FL 110, ST 110
 - RC 110
+
+# Version 1.1.11
+
+Initial SP 222 Support
 
 # Version 1.1.10
 
