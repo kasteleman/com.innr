@@ -22,6 +22,10 @@ Supported Devices:
 - UC 110, FL 110, ST 110
 - RC 110
 
+# Version 1.1.12
+
+Initial RS 230 C RGBW GU10
+
 # Version 1.1.11
 
 Initial SP 222 Support
