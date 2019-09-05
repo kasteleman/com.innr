@@ -14,6 +14,7 @@ Supported Devices:
 - RB 145, B 245
 - RS 125, RS 122, RS 225
 - RS 128 T, RS 228 T
+- RS 230 C
 - BY 178 T, RB 178 T, RB 278 T
 - RB 148 T, RB 248 T
 - PL 110
