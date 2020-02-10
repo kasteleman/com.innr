@@ -1,0 +1,26 @@
+{
+  "name": {
+    "en": "Smart Plug",
+    "nl": "Smart Plug"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "large": "drivers/smart_plug/assets/images/large.png",
+    "small": "drivers/smart_plug/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "innr",
+    "productId": "SP 110",
+    "deviceId": 81,
+    "profileId": 260,
+    "learnmode": {
+      "instruction": {
+        "en": "Toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try turning the Plug on and off 6 times.",
+        "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
+      }
+    }
+  }
+}

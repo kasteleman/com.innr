@@ -10,7 +10,7 @@
   "category": [
     "lights"
   ],
-  "version": "1.1.12",
+  "version": "1.1.13",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -27,7 +27,7 @@
       {
         "name": "Ted Tolboom",
         "email": "dTNL.Homey@gmail.com"
-		  },
+      },
       {
         "name": "Kasteleman",
         "email": "kasteleman@gmail.com"
@@ -45,161 +45,850 @@
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
   },
+  "flow": {
+    "actions": [
+      {
+        "id": "action_DIM_startLevelChange",
+        "title": {
+          "en": "Start dim level change",
+          "nl": "Start helderheid transitie"
+        },
+        "hint": {
+          "en": "This action card will trigger the start of a dim level change in the set direction. \nRate (for the change in dim-level from 0-100%) can be set by using the range slider.",
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie snelheid (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de slider."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white|big_filament_bulb_vintage|long_filament_bulb_vintage"
+          },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Increase dim level",
+                  "nl": "Toenemende helderheid"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Decrease dim level",
+                  "nl": "Afnemende helderheid"
+                }
+              }
+            ]
+          },
+          {
+            "name": "rate",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "action_DIM_stopLevelChange",
+        "title": {
+          "en": "Stop dim level change",
+          "nl": "Stop helderheid transitie"
+        },
+        "hint": {
+          "en": "This action card will trigger the stop of a dim level change.",
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white|big_filament_bulb_vintage|long_filament_bulb_vintage"
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "id": "remote_button_pressed",
+        "title": {
+          "en": "Remote button pressed",
+          "nl": "Remote knop gedrukt"
+        },
+        "tokens": [
+          {
+            "name": "button_number",
+            "type": "number",
+            "title": {
+              "en": "Buttonnumber pushed",
+              "nl": "Knopnummer gedrukt"
+            },
+            "example": 1
+          },
+          {
+            "name": "button_type",
+            "type": "string",
+            "title": {
+              "en": "Type of button pushed",
+              "nl": "Type knop gedrukt"
+            },
+            "example": {
+              "en": "on",
+              "nl": "on"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Lights button 1",
+                  "nl": "Lights knop 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Lights button 2",
+                  "nl": "Lights knop 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Lights button 3",
+                  "nl": "Lights knop 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Lights button 4",
+                  "nl": "Lights knop 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Lights button 5",
+                  "nl": "Lights knop 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Lights button 6",
+                  "nl": "Lights knop 6"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "drivers": [
     {
-      "id": "smart_plug",
       "name": {
-        "en": "Smart Plug",
-        "nl": "Smart Plug"
+        "en": "Recessed Spot Light",
+        "nl": "Recessed Spot Light"
       },
-      "class": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "images": {
-        "large": "drivers/smart_plug/assets/images/large.png",
-        "small": "drivers/smart_plug/assets/images/small.png"
-      },
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": "SP 110",
-        "deviceId": 81,
-        "profileId": 260,
-        "learnmode": {
-          "instruction": {
-            "en": "Toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try turning the Plug on and off 6 times.",
-            "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
-          }
-        }
-      }
-    },
-    {
-      "id": "smart_plug_sp120",
-      "name": {
-        "en": "SP120",
-        "nl": "SP120"
-      },
-      "class": "socket",
+      "class": "light",
       "capabilities": [
         "onoff",
-        "meter_power",
-        "measure_power"
+        "dim"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "meter_power",
-              "measure_power"
-            ]
-          },
-          {
-            "id": "toggle",
-            "capabilities": [
-              "onoff"
-            ]
-          }
-      ]
-      },
-      "images": {
-        "large": "drivers/smart_plug_sp120/assets/images/large.png",
-        "small": "drivers/smart_plug_sp120/assets/images/small.png"
-      },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": "SP 120",
-        "deviceId": 16,
+        "productId": [
+          "RSL 110"
+        ],
+        "deviceId": 256,
         "profileId": 49246,
         "learnmode": {
+          "image": "/drivers/RSL110V2/assets/icon.svg",
           "instruction": {
-            "en": "Press and hold the button on the side for 5 seconds and release.",
-            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+            "en": "Connect the trafo to power.\n\nIf pairing does not automatically start within 20 seconds, try using a paperclip like stated in the manual to start the joining or reset the device.",
+            "nl": "Voorzie de trafo van stroom.\n\nStart het toevoegen niet automatisch binnen 20 seconden, probeer dan zoals aangegeven in de gebruikershandleiding middels een paperclip toevoegen te starten of te resetten."
           }
         }
+      },
+      "images": {
+        "large": "/drivers/RSL110V2/assets/images/large.png",
+        "small": "/drivers/RSL110V2/assets/images/small.png"
       },
       "settings": [
         {
-          "id": "report_interval",
+          "id": "transition_time",
           "type": "number",
           "label": {
-            "en": "Report Interval",
-            "nl": "Report Interval"
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
           },
-          "hint": {
-            "en": "This setting determines the max report Interval.",
-            "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
-          },
-          "value": 60,
+          "value": 1,
           "attr": {
-            "step": 1,
-            "min": 30,
-            "max": 86400
+            "min": 0,
+            "max": 20
           }
-      }
-    ]
-  },
-  {
-    "id": "smart_plug_sp222",
-    "name": {
-      "en": "SP222",
-      "nl": "SP222"
+        }
+      ],
+      "id": "RSL110V2"
     },
-    "class": "socket",
-    "capabilities": [
-      "onoff",
-      "meter_power",
-      "measure_power"
-    ],
-    "mobile": {
-      "components": [
+    {
+      "name": {
+        "en": "Vintage filament Big Bulb",
+        "nl": "Vintage filament Bolle Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RF 261",
+          "BF 261"
+        ],
+        "deviceId": [
+          257
+        ],
+        "profileId": [
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/big_filament_bulb_vintage/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/big_filament_bulb_vintage/assets/images/large.png",
+        "small": "/drivers/big_filament_bulb_vintage/assets/images/small.png"
+      },
+      "settings": [
         {
-          "id": "icon",
-          "capabilities": [
-            "onoff"
-          ]
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
         },
         {
-          "id": "toggle",
-          "capabilities": [
-            "onoff"
-          ]
+          "id": "On_Off_TransitionTime",
+          "type": "number",
+          "label": {
+            "nl": "Aan/Uit Transitie tijd in seconden",
+            "en": "On/Off Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
         }
-    ]
+      ],
+      "id": "big_filament_bulb_vintage"
     },
-    "images": {
-      "large": "drivers/smart_plug_sp222/assets/images/large.png",
-      "small": "drivers/smart_plug_sp222/assets/images/small.png"
-    },
-    "zigbee": {
-      "manufacturerName": "innr",
-      "productId": "SP 222",
-      "deviceId": 266,
-      "profileId": 260,
-      "learnmode": {
-        "instruction": {
-          "en": "Press and hold the button on the side for 5 seconds and release.",
-          "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
-        }
-      }
-    },
-    "settings": []
-  },
     {
-      "id": "remote",
+      "name": {
+        "en": "Dimmable Bulb",
+        "nl": "Dimbare Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RB 162",
+          "RB 165",
+          "RB 175 W",
+          "BY 165",
+          "RB 265",
+          "BY 265"
+        ],
+        "deviceId": [
+          256,
+          257
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/dimmable_bulb/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_bulb/assets/images/large.png",
+        "small": "/drivers/dimmable_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "dimmable_bulb"
+    },
+    {
+      "name": {
+        "en": "Dimmable Bulb",
+        "nl": "Dimbare Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RB 145",
+          "RB 245"
+        ],
+        "deviceId": [
+          256,
+          257
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/dimmable_e14/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_e14/assets/images/large.png",
+        "small": "/drivers/dimmable_e14/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "dimmable_e14"
+    },
+    {
+      "name": {
+        "en": "Dimmable GU10 Bulb",
+        "nl": "Dimbare GU10 Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RS 125",
+          "RS 122",
+          "RS 225"
+        ],
+        "deviceId": [
+          256,
+          257
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/dimmable_gu10/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_gu10/assets/images/large.png",
+        "small": "/drivers/dimmable_gu10/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "dimmable_gu10"
+    },
+    {
+      "name": {
+        "en": "Dimmable PuckLight",
+        "nl": "Dimbare PuckLight"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "PL 110"
+        ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_puck/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_puck/assets/images/large.png",
+        "small": "/drivers/dimmable_puck/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "dimmable_puck"
+    },
+    {
+      "name": {
+        "en": "Dimmable SPOT Bulb",
+        "nl": "Dimbare SPOT Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "DL 110 N",
+          "DL 110 W",
+          "SL 110 N",
+          "SL 110 M",
+          "SL 110 W"
+        ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmable_spot/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_spot/assets/images/large.png",
+        "small": "/drivers/dimmable_spot/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "dimmable_spot"
+    },
+    {
+      "name": {
+        "en": "Vintage filament Bulb",
+        "nl": "Vintage filament Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RF 263",
+          "BF 263"
+        ],
+        "deviceId": [
+          257
+        ],
+        "profileId": [
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/filament_bulb_vintage/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/filament_bulb_vintage/assets/images/large.png",
+        "small": "/drivers/filament_bulb_vintage/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        },
+        {
+          "id": "On_Off_TransitionTime",
+          "type": "number",
+          "label": {
+            "nl": "Aan/Uit Transitie tijd in seconden",
+            "en": "On/Off Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "filament_bulb_vintage"
+    },
+    {
+      "name": {
+        "en": "White filament Bulb",
+        "nl": "White filament Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RF 265",
+          "BF 265"
+        ],
+        "deviceId": [
+          257
+        ],
+        "profileId": [
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/filament_bulb_white/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/filament_bulb_white/assets/images/large.png",
+        "small": "/drivers/filament_bulb_white/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        },
+        {
+          "id": "On_Off_TransitionTime",
+          "type": "number",
+          "label": {
+            "nl": "Aan/Uit Transitie tijd in seconden",
+            "en": "On/Off Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "filament_bulb_white"
+    },
+    {
+      "name": {
+        "en": "LED Strip",
+        "nl": "LED Strip"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "UC 110",
+          "FL 110",
+          "ST 110"
+        ],
+        "deviceId": 256,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/led_strip/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the strip to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de strip uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/led_strip/assets/images/large.png",
+        "small": "/drivers/led_strip/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "led_strip"
+    },
+    {
+      "name": {
+        "en": "Vintage filament Long Bulb",
+        "nl": "Vintage filament Lange Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": [
+          "RF 264",
+          "BF 264"
+        ],
+        "deviceId": [
+          257
+        ],
+        "profileId": [
+          260
+        ],
+        "learnmode": {
+          "image": "/drivers/long_filament_bulb_vintage/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/long_filament_bulb_vintage/assets/images/large.png",
+        "small": "/drivers/long_filament_bulb_vintage/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        },
+        {
+          "id": "On_Off_TransitionTime",
+          "type": "number",
+          "label": {
+            "nl": "Aan/Uit Transitie tijd in seconden",
+            "en": "On/Off Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ],
+      "id": "long_filament_bulb_vintage"
+    },
+    {
       "name": {
         "en": "Remote",
         "nl": "Remote"
       },
       "class": "other",
-      "capabilities": [
-      ],
+      "capabilities": [],
       "images": {
         "large": "drivers/remote/assets/images/large.png",
         "small": "drivers/remote/assets/images/small.png"
@@ -216,10 +905,10 @@
             "nl": "Hou de MIN EN PROGRAM knop gedurende 3 seconden ingedrukt om toevoeging te starten"
           }
         }
-      }
+      },
+      "id": "remote"
     },
     {
-      "id": "rgbw_bulb",
       "name": {
         "en": "RGBW Bulb",
         "nl": "RGBW Lamp"
@@ -249,7 +938,10 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RB 185 C", "BY 185 C"],
+        "productId": [
+          "RB 185 C",
+          "BY 185 C"
+        ],
         "deviceId": 528,
         "profileId": 49246,
         "learnmode": {
@@ -277,10 +969,10 @@
             "max": 6553
           }
         }
-      ]
+      ],
+      "id": "rgbw_bulb"
     },
     {
-      "id": "rgbw_bulb_z3",
       "name": {
         "en": "RGBW Z3 Bulb",
         "nl": "RGBW Z3 Lamp"
@@ -310,7 +1002,10 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RB 285 C", "BY 285 C"],
+        "productId": [
+          "RB 285 C",
+          "BY 285 C"
+        ],
         "deviceId": 269,
         "profileId": 260,
         "learnmode": {
@@ -338,10 +1033,10 @@
             "max": 6553
           }
         }
-      ]
+      ],
+      "id": "rgbw_bulb_z3"
     },
     {
-      "id": "rgbw_e14",
       "name": {
         "en": "RGBW E14 Bulb",
         "nl": "RGBW E14 Lamp"
@@ -371,7 +1066,9 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RB 250 C"],
+        "productId": [
+          "RB 250 C"
+        ],
         "deviceId": 269,
         "profileId": 260,
         "learnmode": {
@@ -399,10 +1096,10 @@
             "max": 6553
           }
         }
-      ]
+      ],
+      "id": "rgbw_e14"
     },
     {
-      "id": "rgbw_gu10",
       "name": {
         "en": "RGBW GU10 Bulb",
         "nl": "RGBW GU10 Lamp"
@@ -432,7 +1129,9 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RS 230 C"],
+        "productId": [
+          "RS 230 C"
+        ],
         "deviceId": 269,
         "profileId": 260,
         "learnmode": {
@@ -473,10 +1172,10 @@
             "max": 20
           }
         }
-      ]
+      ],
+      "id": "rgbw_gu10"
     },
     {
-      "id": "rgbw_strip",
       "name": {
         "en": "RGBW LEDSTRIP",
         "nl": "RGBW LEDSTRIP"
@@ -534,361 +1233,155 @@
             "max": 6553
           }
         }
-      ]
+      ],
+      "id": "rgbw_strip"
     },
     {
-      "id": "dimmable_bulb",
       "name": {
-        "en": "Dimmable Bulb",
-        "nl": "Dimbare Lamp"
+        "en": "Smart Plug",
+        "nl": "Smart Plug"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
-        "onoff",
-        "dim"
+        "onoff"
       ],
-      "capabilitiesOptions": {
-        "dim": {
-          "opts": {
-            "duration": true
-          }
-        },
-        "onoff": {
-          "setOnDim": false
-        }
+      "images": {
+        "large": "drivers/smart_plug/assets/images/large.png",
+        "small": "drivers/smart_plug/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RB 162", "RB 165", "RB 175 W", "BY 165", "RB 265", "BY 265"],
-        "deviceId": [256, 257],
-        "profileId": [49246, 260],
+        "productId": "SP 110",
+        "deviceId": 81,
+        "profileId": 260,
         "learnmode": {
-          "image": "/drivers/dimmable_bulb/assets/icon.svg",
           "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "en": "Toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try turning the Plug on and off 6 times.",
+            "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
           }
         }
       },
-      "images": {
-        "large": "/drivers/dimmable_bulb/assets/images/large.png",
-        "small": "/drivers/dimmable_bulb/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
+      "id": "smart_plug"
     },
     {
-      "id": "filament_bulb_vintage",
       "name": {
-        "en": "Vintage filament Bulb",
-        "nl": "Vintage filament Lamp"
+        "en": "SP120",
+        "nl": "SP120"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
-        "dim"
+        "meter_power",
+        "measure_power"
       ],
-      "capabilitiesOptions": {
-        "dim": {
-          "opts": {
-            "duration": true
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "meter_power",
+              "measure_power"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
           }
-        },
-        "onoff": {
-          "setOnDim": false
-        }
+        ]
+      },
+      "images": {
+        "large": "drivers/smart_plug_sp120/assets/images/large.png",
+        "small": "drivers/smart_plug_sp120/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RF 263", "BF 263"],
-        "deviceId": [257],
-        "profileId": [260],
+        "productId": "SP 120",
+        "deviceId": 16,
+        "profileId": 49246,
         "learnmode": {
-          "image": "/drivers/filament_bulb_vintage/assets/icon.svg",
           "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "en": "Press and hold the button on the side for 5 seconds and release.",
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
           }
         }
-      },
-      "images": {
-        "large": "/drivers/filament_bulb_vintage/assets/images/large.png",
-        "small": "/drivers/filament_bulb_vintage/assets/images/small.png"
       },
       "settings": [
         {
-          "id": "transition_time",
+          "id": "report_interval",
           "type": "number",
           "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Report Interval",
+            "nl": "Report Interval"
           },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        },
-        {
-          "id": "On_Off_TransitionTime",
-          "type": "number",
-          "label": {
-            "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
+          "hint": {
+            "en": "This setting determines the max report Interval.",
+            "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
           },
-          "value": 1,
+          "value": 60,
           "attr": {
-            "min": 0,
-            "max": 20
+            "step": 1,
+            "min": 30,
+            "max": 86400
           }
         }
-      ]
+      ],
+      "id": "smart_plug_sp120"
     },
     {
-      "id": "filament_bulb_white",
       "name": {
-        "en": "White filament Bulb",
-        "nl": "White filament Lamp"
+        "en": "SP222",
+        "nl": "SP222"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
-        "dim"
+        "meter_power",
+        "measure_power"
       ],
-      "capabilitiesOptions": {
-        "dim": {
-          "opts": {
-            "duration": true
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
           }
-        },
-        "onoff": {
-          "setOnDim": false
-        }
+        ]
+      },
+      "images": {
+        "large": "drivers/smart_plug_sp222/assets/images/large.png",
+        "small": "drivers/smart_plug_sp222/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RF 265", "BF 265"],
-        "deviceId": [257],
-        "profileId": [260],
+        "productId": "SP 222",
+        "deviceId": 266,
+        "profileId": 260,
         "learnmode": {
-          "image": "/drivers/filament_bulb_white/assets/icon.svg",
           "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "en": "Press and hold the button on the side for 5 seconds and release.",
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
           }
         }
       },
-      "images": {
-        "large": "/drivers/filament_bulb_white/assets/images/large.png",
-        "small": "/drivers/filament_bulb_white/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        },
-        {
-          "id": "On_Off_TransitionTime",
-          "type": "number",
-          "label": {
-            "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
+      "settings": [],
+      "id": "smart_plug_sp222"
     },
     {
-      "id": "dimmable_e14",
-      "name": {
-        "en": "Dimmable Bulb",
-        "nl": "Dimbare Lamp"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "capabilitiesOptions": {
-        "dim": {
-          "opts": {
-            "duration": true
-          }
-        },
-        "onoff": {
-          "setOnDim": false
-        }
-      },
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": ["RB 145", "RB 245"],
-        "deviceId": [256, 257],
-        "profileId": [49246, 260],
-        "learnmode": {
-          "image": "/drivers/dimmable_e14/assets/icon.svg",
-          "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
-          }
-        }
-      },
-      "images": {
-        "large": "/drivers/dimmable_e14/assets/images/large.png",
-        "small": "/drivers/dimmable_e14/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
-    },
-    {
-      "id": "dimmable_gu10",
-      "name": {
-        "en": "Dimmable GU10 Bulb",
-        "nl": "Dimbare GU10 Lamp"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "capabilitiesOptions": {
-        "dim": {
-          "opts": {
-            "duration": true
-          }
-        },
-        "onoff": {
-          "setOnDim": false
-        }
-      },
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": ["RS 125", "RS 122", "RS 225"],
-        "deviceId": [256, 257],
-        "profileId": [49246, 260],
-        "learnmode": {
-          "image": "/drivers/dimmable_gu10/assets/icon.svg",
-          "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
-          }
-        }
-      },
-      "images": {
-        "large": "/drivers/dimmable_gu10/assets/images/large.png",
-        "small": "/drivers/dimmable_gu10/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
-    },
-    {
-      "id": "tunable_gu10",
-      "name": {
-        "en": "Tunable GU10 Bulb",
-        "nl": "Tunable GU10 Lamp"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "light_temperature"
-      ],
-      "capabilitiesOptions": {
-        "dim": {
-          "opts": {
-            "duration": true
-          }
-        },
-        "onoff": {
-          "setOnDim": false
-        }
-      },
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": ["RS 128 T", "RS 228 T"],
-        "deviceId": [544, 268],
-        "profileId": [49246, 260],
-        "learnmode": {
-          "image": "/drivers/tunable_gu10/assets/icon.svg",
-          "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
-          }
-        }
-      },
-      "images": {
-        "large": "/drivers/tunable_gu10/assets/images/large.png",
-        "small": "/drivers/tunable_gu10/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
-    },
-    {
-      "id": "tunable_bulb",
       "name": {
         "en": "Tunable Bulb",
         "nl": "Tunable Lamp"
@@ -911,9 +1404,19 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["BY 178 T", "RB 178 T", "RB 278 T"],
-        "deviceId": [544, 268],
-        "profileId": [49246, 260],
+        "productId": [
+          "BY 178 T",
+          "RB 178 T",
+          "RB 278 T"
+        ],
+        "deviceId": [
+          544,
+          268
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
         "learnmode": {
           "image": "/drivers/tunable_bulb/assets/icon.svg",
           "instruction": {
@@ -940,10 +1443,10 @@
             "max": 20
           }
         }
-      ]
+      ],
+      "id": "tunable_bulb"
     },
     {
-      "id": "tunable_e14",
       "name": {
         "en": "Tunable E14",
         "nl": "Tunable E14"
@@ -966,9 +1469,18 @@
       },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["RB 148 T", "RB 248 T"],
-        "deviceId": [544, 268],
-        "profileId": [49246, 260],
+        "productId": [
+          "RB 148 T",
+          "RB 248 T"
+        ],
+        "deviceId": [
+          544,
+          268
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
         "learnmode": {
           "image": "/drivers/tunable_e14/assets/icon.svg",
           "instruction": {
@@ -995,26 +1507,46 @@
             "max": 20
           }
         }
-      ]
+      ],
+      "id": "tunable_e14"
     },
     {
-      "id": "dimmable_puck",
       "name": {
-        "en": "Dimmable PuckLight",
-        "nl": "Dimbare PuckLight"
+        "en": "Tunable GU10 Bulb",
+        "nl": "Tunable GU10 Lamp"
       },
       "class": "light",
       "capabilities": [
         "onoff",
-        "dim"
+        "dim",
+        "light_temperature"
       ],
+      "capabilitiesOptions": {
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "onoff": {
+          "setOnDim": false
+        }
+      },
       "zigbee": {
         "manufacturerName": "innr",
-        "productId": ["PL 110"],
-        "deviceId": 256,
-        "profileId": 49246,
+        "productId": [
+          "RS 128 T",
+          "RS 228 T"
+        ],
+        "deviceId": [
+          544,
+          268
+        ],
+        "profileId": [
+          49246,
+          260
+        ],
         "learnmode": {
-          "image": "/drivers/dimmable_puck/assets/icon.svg",
+          "image": "/drivers/tunable_gu10/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
             "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
@@ -1022,8 +1554,8 @@
         }
       },
       "images": {
-        "large": "/drivers/dimmable_puck/assets/images/large.png",
-        "small": "/drivers/dimmable_puck/assets/images/small.png"
+        "large": "/drivers/tunable_gu10/assets/images/large.png",
+        "small": "/drivers/tunable_gu10/assets/images/small.png"
       },
       "settings": [
         {
@@ -1039,293 +1571,8 @@
             "max": 20
           }
         }
-      ]
-    },
-    {
-      "id": "RSL110V2",
-      "name": {
-        "en": "Recessed Spot Light",
-        "nl": "Recessed Spot Light"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
       ],
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": ["RSL 110"],
-        "deviceId": 256,
-        "profileId": 49246,
-        "learnmode": {
-          "image": "/drivers/RSL110V2/assets/icon.svg",
-          "instruction": {
-            "en": "Connect the trafo to power.\n\nIf pairing does not automatically start within 20 seconds, try using a paperclip like stated in the manual to start the joining or reset the device.",
-            "nl": "Voorzie de trafo van stroom.\n\nStart het toevoegen niet automatisch binnen 20 seconden, probeer dan zoals aangegeven in de gebruikershandleiding middels een paperclip toevoegen te starten of te resetten."
-          }
-        }
-      },
-      "images": {
-        "large": "/drivers/RSL110V2/assets/images/large.png",
-        "small": "/drivers/RSL110V2/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
-    },
-    {
-      "id": "dimmable_spot",
-      "name": {
-        "en": "Dimmable SPOT Bulb",
-        "nl": "Dimbare SPOT Lamp"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": ["DL 110 N", "DL 110 W", "SL 110 N", "SL 110 M", "SL 110 W"],
-        "deviceId": 256,
-        "profileId": 49246,
-        "learnmode": {
-          "image": "/drivers/dimmable_spot/assets/icon.svg",
-          "instruction": {
-            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
-          }
-        }
-      },
-      "images": {
-        "large": "/drivers/dimmable_spot/assets/images/large.png",
-        "small": "/drivers/dimmable_spot/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
-    },
-    {
-      "id": "led_strip",
-      "name": {
-        "en": "LED Strip",
-        "nl": "LED Strip"
-      },
-      "class": "light",
-      "capabilities": [
-        "onoff",
-        "dim"
-      ],
-      "zigbee": {
-        "manufacturerName": "innr",
-        "productId": ["UC 110", "FL 110", "ST 110"],
-        "deviceId": 256,
-        "profileId": 49246,
-        "learnmode": {
-          "image": "/drivers/led_strip/assets/icon.svg",
-          "instruction": {
-            "en": "Toggle the strip to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de strip uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
-          }
-        }
-      },
-      "images": {
-        "large": "/drivers/led_strip/assets/images/large.png",
-        "small": "/drivers/led_strip/assets/images/small.png"
-      },
-      "settings": [
-        {
-          "id": "transition_time",
-          "type": "number",
-          "label": {
-            "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 20
-          }
-        }
-      ]
+      "id": "tunable_gu10"
     }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "remote_button_pressed",
-        "title": {
-          "en": "Remote button pressed",
-          "nl": "Remote knop gedrukt"
-        },
-        "tokens": [
-          {
-            "name": "button_number",
-            "type": "number",
-            "title": {
-              "en": "Buttonnumber pushed",
-              "nl": "Knopnummer gedrukt"
-            },
-            "example": 1
-               },
-          {
-            "name": "button_type",
-            "type": "string",
-            "title": {
-              "en": "Type of button pushed",
-              "nl": "Type knop gedrukt"
-            },
-            "example": {
-              "en": "on",
-              "nl": "on"
-            }
-                }
-             ],
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=remote"
-                 },
-          {
-            "name": "button",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Lights button 1",
-                  "nl": "Lights knop 1"
-                }
-                     },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Lights button 2",
-                  "nl": "Lights knop 2"
-                }
-                     },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Lights button 3",
-                  "nl": "Lights knop 3"
-                }
-                     },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Lights button 4",
-                  "nl": "Lights knop 4"
-                }
-                     },
-              {
-                "id": "5",
-                "label": {
-                  "en": "Lights button 5",
-                  "nl": "Lights knop 5"
-                }
-                     },
-              {
-                "id": "6",
-                "label": {
-                  "en": "Lights button 6",
-                  "nl": "Lights knop 6"
-                }
-                     }
-                   ]
-                 }
-             ]
-         }
-     ],
-    "actions": [{
-        "id": "action_DIM_startLevelChange",
-        "title": {
-          "en": "Start dim level change",
-          "nl": "Start helderheid transitie"
-        },
-        "hint": {
-          "en": "This action card will trigger the start of a dim level change in the set direction. \nRate (for the change in dim-level from 0-100%) can be set by using the range slider.",
-          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie snelheid (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de slider."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white"
-       },
-          {
-            "name": "direction",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "0",
-                "label": {
-                  "en": "Increase dim level",
-                  "nl": "Toenemende helderheid"
-                }
-             },
-              {
-                "id": "1",
-                "label": {
-                  "en": "Decrease dim level",
-                  "nl": "Afnemende helderheid"
-                }
-             }
-           ]
-       },
-          {
-            "name": "rate",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-       }
-
-     ]
-     },
-      {
-        "id": "action_DIM_stopLevelChange",
-        "title": {
-          "en": "Stop dim level change",
-          "nl": "Stop helderheid transitie"
-        },
-        "hint": {
-          "en": "This action card will trigger the stop of a dim level change.",
-          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2,filament_bulb_vintage,filament_bulb_white"
-     }]
-     }]
-  }
+  ]
 }

@@ -1,0 +1,45 @@
+{
+  "name": {
+    "en": "Recessed Spot Light",
+    "nl": "Recessed Spot Light"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "zigbee": {
+    "manufacturerName": "innr",
+    "productId": [
+      "RSL 110"
+    ],
+    "deviceId": 256,
+    "profileId": 49246,
+    "learnmode": {
+      "image": "/drivers/RSL110V2/assets/icon.svg",
+      "instruction": {
+        "en": "Connect the trafo to power.\n\nIf pairing does not automatically start within 20 seconds, try using a paperclip like stated in the manual to start the joining or reset the device.",
+        "nl": "Voorzie de trafo van stroom.\n\nStart het toevoegen niet automatisch binnen 20 seconden, probeer dan zoals aangegeven in de gebruikershandleiding middels een paperclip toevoegen te starten of te resetten."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/RSL110V2/assets/images/large.png",
+    "small": "/drivers/RSL110V2/assets/images/small.png"
+  },
+  "settings": [
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "nl": "Transitie tijd in seconden",
+        "en": "Transition time in seconds"
+      },
+      "value": 1,
+      "attr": {
+        "min": 0,
+        "max": 20
+      }
+    }
+  ]
+}

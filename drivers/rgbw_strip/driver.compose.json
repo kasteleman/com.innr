@@ -1,0 +1,60 @@
+{
+  "name": {
+    "en": "RGBW LEDSTRIP",
+    "nl": "RGBW LEDSTRIP"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "drivers/rgbw_strip/assets/images/large.png",
+    "small": "drivers/rgbw_strip/assets/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": "innr",
+    "productId": "FL 130 C",
+    "deviceId": 528,
+    "profileId": 49246,
+    "learnmode": {
+      "instruction": {
+        "en": "Toggle the strip to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
+        "nl": "Zet de strip uit en weer aan.\n\nWordt de strip niet automatisch toegevoegd binnen 20 seconden, probeer dan de strip te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De strip zal knipperen om aan te geven dat hij is gereset."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "en": "Transition Time",
+        "nl": "Overgangstijd"
+      },
+      "hint": {
+        "en": "This setting determines the time in seconds it takes to dim from one level to another.",
+        "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+      },
+      "value": 1,
+      "attr": {
+        "min": 0,
+        "max": 6553
+      }
+    }
+  ]
+}

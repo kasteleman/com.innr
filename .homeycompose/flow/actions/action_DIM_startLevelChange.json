@@ -1,0 +1,47 @@
+{
+  "id": "action_DIM_startLevelChange",
+  "title": {
+    "en": "Start dim level change",
+    "nl": "Start helderheid transitie"
+  },
+  "hint": {
+    "en": "This action card will trigger the start of a dim level change in the set direction. \nRate (for the change in dim-level from 0-100%) can be set by using the range slider.",
+    "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie snelheid (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de slider."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white|big_filament_bulb_vintage|long_filament_bulb_vintage"
+    },
+    {
+      "name": "direction",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Increase dim level",
+            "nl": "Toenemende helderheid"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Decrease dim level",
+            "nl": "Afnemende helderheid"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rate",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "label": "%",
+      "labelMultiplier": 100
+    }
+  ]
+}

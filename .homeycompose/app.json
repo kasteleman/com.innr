@@ -1,0 +1,48 @@
+{
+  "id": "com.innr",
+  "name": {
+    "en": "INNR Lighting B.V."
+  },
+  "description": {
+    "en": "INNR Lighting B.V.",
+    "nl": "INNR Lighting B.V."
+  },
+  "category": [
+    "lights"
+  ],
+  "version": "1.1.13",
+  "compatibility": ">=1.5.13",
+  "sdk": 2,
+  "author": {
+    "name": "Kasteleman",
+    "email": "kasteleman@gmail.com"
+  },
+  "athomForumDiscussionId": 3882,
+  "contributors": {
+    "developers": [
+      {
+        "name": "Mark T",
+        "email": "mtudor@icefusion.co.uk"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
+      },
+      {
+        "name": "Kasteleman",
+        "email": "kasteleman@gmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "kasteleman"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  }
+}
