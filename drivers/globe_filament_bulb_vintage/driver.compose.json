@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Vintage filament Big Bulb",
-    "nl": "Vintage filament Bolle Lamp"
+    "en": "Vintage filament Globe Bulb",
+    "nl": "Vintage filament Globe Lamp"
   },
   "class": "light",
   "capabilities": [
@@ -31,7 +31,7 @@
       260
     ],
     "learnmode": {
-      "image": "/drivers/big_filament_bulb_vintage/assets/icon.svg",
+      "image": "/drivers/globe_filament_bulb_vintage/assets/icon.svg",
       "instruction": {
         "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
         "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
@@ -39,8 +39,8 @@
     }
   },
   "images": {
-    "large": "/drivers/big_filament_bulb_vintage/assets/images/large.png",
-    "small": "/drivers/big_filament_bulb_vintage/assets/images/small.png"
+    "large": "/drivers/globe_filament_bulb_vintage/assets/images/large.png",
+    "small": "/drivers/globe_filament_bulb_vintage/assets/images/small.png"
   },
   "settings": [
     {
