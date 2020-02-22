@@ -561,8 +561,7 @@
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [
-          "RF 264",
-          "BF 264"
+          "RF 264"
         ],
         "deviceId": [
           257
@@ -783,8 +782,7 @@
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [
-          "RF 261",
-          "BF 261"
+          "RF 261"
         ],
         "deviceId": [
           257
