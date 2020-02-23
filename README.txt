@@ -118,5 +118,5 @@ Slider on the remote in SCENES position, commands are broadcasted and applied to
 
 Feedback:
 
-Any requests please contact me on [Slack](https://athomcommunity.slack.com/team/kasteleman)
-Please report issues at the [issues section on Github](https://github.com/kasteleman/com.innr/issues)
+Any requests please contact me on Slack
+Please report issues at the issues section on Github
