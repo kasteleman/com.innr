@@ -455,7 +455,8 @@
       "zigbee": {
         "manufacturerName": "innr",
         "productId": [
-          "PL 110"
+          "PL 110",
+          "PL 115"
         ],
         "deviceId": 256,
         "profileId": 49246,
@@ -1533,7 +1534,8 @@
         "manufacturerName": "innr",
         "productId": [
           "RS 128 T",
-          "RS 228 T"
+          "RS 228 T",
+          "RS 229 T"
         ],
         "deviceId": [
           544,

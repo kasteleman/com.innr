@@ -11,7 +11,8 @@
   "zigbee": {
     "manufacturerName": "innr",
     "productId": [
-      "PL 110"
+      "PL 110",
+      "PL 115"
     ],
     "deviceId": 256,
     "profileId": 49246,
