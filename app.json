@@ -1,11 +1,11 @@
 {
   "id": "com.innr",
   "name": {
-    "en": "INNR Lighting B.V."
+    "en": "INNR Lighting Devices."
   },
   "description": {
-    "en": "INNR Lighting B.V.",
-    "nl": "INNR Lighting B.V."
+    "en": "INNR Lighting Devices",
+    "nl": "INNR Lighting Apparaten"
   },
   "category": [
     "lights"
