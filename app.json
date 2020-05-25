@@ -1,16 +1,16 @@
 {
   "id": "com.innr",
   "name": {
-    "en": "INNR Lighting Devices."
+    "en": "INNR Lighting B.V."
   },
   "description": {
-    "en": "INNR Lighting Devices",
-    "nl": "INNR Lighting Apparaten"
+    "en": "INNR Lighting B.V.",
+    "nl": "INNR Lighting B.V."
   },
   "category": [
     "lights"
   ],
-  "version": "1.1.15",
+  "version": "1.1.16",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
@@ -1333,6 +1333,50 @@
         }
       ],
       "id": "smart_plug_sp120"
+    },
+    {
+      "name": {
+        "en": "SP220",
+        "nl": "SP220"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          }
+        ]
+      },
+      "images": {
+        "large": "drivers/smart_plug_sp220/assets/images/large.png",
+        "small": "drivers/smart_plug_sp220/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "innr",
+        "productId": "SP 220",
+        "deviceId": 266,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the button on the side for 5 seconds and release.",
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+          }
+        }
+      },
+      "settings": [],
+      "id": "smart_plug_sp220"
     },
     {
       "name": {
