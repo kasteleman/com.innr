@@ -4,13 +4,13 @@
     "en": "INNR Lighting Devices"
   },
   "description": {
-    "en": "INNR Lighting Devices",
-    "nl": "INNR Lighting Apparaten"
+    "en": "Connect INNR Lighting Devices",
+    "nl": "Verbind INNR Lighting Apparaten"
   },
   "category": [
     "lights"
   ],
-  "version": "1.1.18",
+  "version": "1.1.19",
   "compatibility": ">=1.5.13",
   "sdk": 2,
   "author": {
