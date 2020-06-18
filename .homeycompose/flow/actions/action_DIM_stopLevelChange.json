@@ -12,7 +12,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white|big_filament_bulb_vintage|long_filament_bulb_vintage"
+      "filter": "driver_id=dimmable_bulb|dimmable_e14|dimmable_gu10|dimmable_puck|dimmable_spot|led_strip|rgbw_bulb|rgbw_bulb_z3|rgbw_strip|rgbw_e14|rgbw_gu10|tunable_bulb|tunable_e14|tunable_gu10|RSL110V2|filament_bulb_vintage|filament_bulb_white|big_filament_bulb_vintage|long_filament_bulb_vintage|rgbw_ofl|rgbw_osl"
     }
   ]
 }
