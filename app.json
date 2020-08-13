@@ -5,7 +5,8 @@
   },
   "description": {
     "en": "Connect INNR Lighting Devices",
-    "nl": "Verbind INNR Lighting Apparaten"
+    "nl": "Verbind INNR Lighting Apparaten",
+    "de": "INNR Lighting Geräte verbinden"
   },
   "category": [
     "lights"
@@ -51,11 +52,13 @@
         "id": "action_DIM_startLevelChange",
         "title": {
           "en": "Start dim level change",
-          "nl": "Start helderheid transitie"
+          "nl": "Start helderheid transitie",
+          "de": "Start Dimmwertänderung"
         },
         "hint": {
           "en": "This action card will trigger the start of a dim level change in the set direction. \nRate (for the change in dim-level from 0-100%) can be set by using the range slider.",
-          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie snelheid (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de slider."
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie snelheid (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de slider.",
+          "de": "Diese Aktionskarte löst den Beginn einer Dimmwertänderung in der eingestellten Richtung aus. \nDie Rate (für die Änderung des Abblendpegels von 0-100%) kann mit dem Bereichsschieberegler eingestellt werden."
         },
         "args": [
           {
@@ -71,14 +74,16 @@
                 "id": "0",
                 "label": {
                   "en": "Increase dim level",
-                  "nl": "Toenemende helderheid"
+                  "nl": "Toenemende helderheid",
+                  "de": "Dimmwert erhöhen"
                 }
               },
               {
                 "id": "1",
                 "label": {
                   "en": "Decrease dim level",
-                  "nl": "Afnemende helderheid"
+                  "nl": "Afnemende helderheid",
+                  "de": "Dimmwert verringern"
                 }
               }
             ]
@@ -98,11 +103,13 @@
         "id": "action_DIM_stopLevelChange",
         "title": {
           "en": "Stop dim level change",
-          "nl": "Stop helderheid transitie"
+          "nl": "Stop helderheid transitie",
+          "de": "Stopp Dimmwertänderung"
         },
         "hint": {
           "en": "This action card will trigger the stop of a dim level change.",
-          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting."
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting.",
+          "de": "Diese Aktionskarte stoppt die Dimmwertänderung."
         },
         "args": [
           {
@@ -118,7 +125,8 @@
         "id": "remote_button_pressed",
         "title": {
           "en": "Remote button pressed",
-          "nl": "Remote knop gedrukt"
+          "nl": "Remote knop gedrukt",
+          "de": "Remote-Taste gedrückt"
         },
         "tokens": [
           {
@@ -126,7 +134,8 @@
             "type": "number",
             "title": {
               "en": "Buttonnumber pushed",
-              "nl": "Knopnummer gedrukt"
+              "nl": "Knopnummer gedrukt",
+              "de": "Nummerntaste gedrückt"
             },
             "example": 1
           },
@@ -135,11 +144,13 @@
             "type": "string",
             "title": {
               "en": "Type of button pushed",
-              "nl": "Type knop gedrukt"
+              "nl": "Type knop gedrukt",
+              "de": "Typ der gedrückten Taste"
             },
             "example": {
               "en": "on",
-              "nl": "on"
+              "nl": "on",
+              "de": "on"
             }
           }
         ],
@@ -157,42 +168,48 @@
                 "id": "1",
                 "label": {
                   "en": "Lights button 1",
-                  "nl": "Lights knop 1"
+                  "nl": "Lights knop 1",
+                  "de": "Licht-Taste 1"
                 }
               },
               {
                 "id": "2",
                 "label": {
                   "en": "Lights button 2",
-                  "nl": "Lights knop 2"
+                  "nl": "Lights knop 2",
+                  "de": "Licht-Taste 2"
                 }
               },
               {
                 "id": "3",
                 "label": {
                   "en": "Lights button 3",
-                  "nl": "Lights knop 3"
+                  "nl": "Lights knop 3",
+                  "de": "Licht-Taste 3"
                 }
               },
               {
                 "id": "4",
                 "label": {
                   "en": "Lights button 4",
-                  "nl": "Lights knop 4"
+                  "nl": "Lights knop 4",
+                  "de": "Licht-Taste 4"
                 }
               },
               {
                 "id": "5",
                 "label": {
                   "en": "Lights button 5",
-                  "nl": "Lights knop 5"
+                  "nl": "Lights knop 5",
+                  "de": "Licht-Taste 5"
                 }
               },
               {
                 "id": "6",
                 "label": {
                   "en": "Lights button 6",
-                  "nl": "Lights knop 6"
+                  "nl": "Lights knop 6",
+                  "de": "Licht-Taste 6"
                 }
               }
             ]
@@ -205,7 +222,8 @@
     {
       "name": {
         "en": "Recessed Spot Light",
-        "nl": "Recessed Spot Light"
+        "nl": "Recessed Spot Light",
+        "de": "Recessed Spot Light"
       },
       "class": "light",
       "capabilities": [
@@ -223,7 +241,8 @@
           "image": "/drivers/RSL110V2/assets/icon.svg",
           "instruction": {
             "en": "Connect the trafo to power.\n\nIf pairing does not automatically start within 20 seconds, try using a paperclip like stated in the manual to start the joining or reset the device.",
-            "nl": "Voorzie de trafo van stroom.\n\nStart het toevoegen niet automatisch binnen 20 seconden, probeer dan zoals aangegeven in de gebruikershandleiding middels een paperclip toevoegen te starten of te resetten."
+            "nl": "Voorzie de trafo van stroom.\n\nStart het toevoegen niet automatisch binnen 20 seconden, probeer dan zoals aangegeven in de gebruikershandleiding middels een paperclip toevoegen te starten of te resetten.",
+            "de": "Schließen Sie den Trafo an die Stromversorgung an.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, verwenden Sie eine Büroklammer wie im Handbuch angegeben, um die Verbindung zu starten oder das Gerät zurückzusetzen."
           }
         }
       },
@@ -237,7 +256,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -251,7 +271,8 @@
     {
       "name": {
         "en": "Dimmable Bulb",
-        "nl": "Dimbare Lamp"
+        "nl": "Dimbare Lamp",
+        "de": "Dimmbare Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -290,7 +311,8 @@
           "image": "/drivers/dimmable_bulb/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -304,7 +326,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -318,7 +341,8 @@
     {
       "name": {
         "en": "Dimmable Bulb",
-        "nl": "Dimbare Lamp"
+        "nl": "Dimbare Lamp",
+        "de": "Dimmbare Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -353,7 +377,8 @@
           "image": "/drivers/dimmable_e14/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -367,7 +392,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -381,7 +407,8 @@
     {
       "name": {
         "en": "Dimmable GU10 Bulb",
-        "nl": "Dimbare GU10 Lamp"
+        "nl": "Dimbare GU10 Lamp",
+        "de": "Dimmbare GU10 Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -417,7 +444,8 @@
           "image": "/drivers/dimmable_gu10/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -431,7 +459,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -445,7 +474,8 @@
     {
       "name": {
         "en": "Dimmable PuckLight",
-        "nl": "Dimbare PuckLight"
+        "nl": "Dimbare PuckLight",
+        "de": "Dimmbare PuckLight"
       },
       "class": "light",
       "capabilities": [
@@ -464,7 +494,8 @@
           "image": "/drivers/dimmable_puck/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -478,7 +509,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -492,7 +524,8 @@
     {
       "name": {
         "en": "Dimmable SPOT Bulb",
-        "nl": "Dimbare SPOT Lamp"
+        "nl": "Dimbare SPOT Lamp",
+        "de": "Dimmbare SPOT Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -514,7 +547,8 @@
           "image": "/drivers/dimmable_spot/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -528,7 +562,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -542,7 +577,8 @@
     {
       "name": {
         "en": "Vintage filament Edison Bulb",
-        "nl": "Vintage filament Edison Lamp"
+        "nl": "Vintage filament Edison Lamp",
+        "de": "Vintage Filament Edison Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -574,7 +610,8 @@
           "image": "/drivers/edison_filament_bulb_vintage/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -588,7 +625,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -601,7 +639,8 @@
           "type": "number",
           "label": {
             "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
+            "en": "On/Off Transition time in seconds",
+            "de": "Ein/Aus-Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -615,7 +654,8 @@
     {
       "name": {
         "en": "Vintage filament Bulb",
-        "nl": "Vintage filament Lamp"
+        "nl": "Vintage filament Lamp",
+        "de": "Vintage Filament Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -648,7 +688,8 @@
           "image": "/drivers/filament_bulb_vintage/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -662,7 +703,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -675,7 +717,8 @@
           "type": "number",
           "label": {
             "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
+            "en": "On/Off Transition time in seconds",
+            "de": "Ein/Aus-Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -689,7 +732,8 @@
     {
       "name": {
         "en": "White filament Bulb",
-        "nl": "White filament Lamp"
+        "nl": "White filament Lamp",
+        "de": "White Filament Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -722,7 +766,8 @@
           "image": "/drivers/filament_bulb_white/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -736,7 +781,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -749,7 +795,8 @@
           "type": "number",
           "label": {
             "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
+            "en": "On/Off Transition time in seconds",
+            "de": "Ein/Aus-Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -763,7 +810,8 @@
     {
       "name": {
         "en": "Vintage filament Globe Bulb",
-        "nl": "Vintage filament Globe Lamp"
+        "nl": "Vintage filament Globe Lamp",
+        "de": "Vintage Filament Globe Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -795,7 +843,8 @@
           "image": "/drivers/globe_filament_bulb_vintage/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -809,7 +858,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -822,7 +872,8 @@
           "type": "number",
           "label": {
             "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
+            "en": "On/Off Transition time in seconds",
+            "de": "Ein/Aus-Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -836,7 +887,8 @@
     {
       "name": {
         "en": "LED Strip",
-        "nl": "LED Strip"
+        "nl": "LED Strip",
+        "de": "LED Strip"
       },
       "class": "light",
       "capabilities": [
@@ -856,7 +908,8 @@
           "image": "/drivers/led_strip/assets/icon.svg",
           "instruction": {
             "en": "Toggle the strip to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de strip uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de strip uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -870,7 +923,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -884,7 +938,8 @@
     {
       "name": {
         "en": "Remote",
-        "nl": "Remote"
+        "nl": "Remote",
+        "de": "Remote"
       },
       "class": "other",
       "capabilities": [],
@@ -901,7 +956,8 @@
           "image": "/drivers/remote/assets/learnmode.svg",
           "instruction": {
             "en": "Press and Hold MINUS AND PROGRAM button for 3 seconds to start inclusion",
-            "nl": "Hou de MIN EN PROGRAM knop gedurende 3 seconden ingedrukt om toevoeging te starten"
+            "nl": "Hou de MIN EN PROGRAM knop gedurende 3 seconden ingedrukt om toevoeging te starten",
+            "de": "Um die Inklusion zu starten, drücken und halten Sie die MINUS UND PROGRAM Taste für 3 Sekunden"
           }
         }
       },
@@ -910,7 +966,8 @@
     {
       "name": {
         "en": "RGBW Bulb",
-        "nl": "RGBW Lamp"
+        "nl": "RGBW Lamp",
+        "de": "RGBW Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -946,7 +1003,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -956,11 +1014,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -974,7 +1034,8 @@
     {
       "name": {
         "en": "RGBW Z3 Bulb",
-        "nl": "RGBW Z3 Lamp"
+        "nl": "RGBW Z3 Lamp",
+        "de": "RGBW Z3 Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -1010,7 +1071,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -1020,11 +1082,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -1038,7 +1102,8 @@
     {
       "name": {
         "en": "RGBW E14 Bulb",
-        "nl": "RGBW E14 Lamp"
+        "nl": "RGBW E14 Lamp",
+        "de": "RGBW E14 Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -1073,7 +1138,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -1083,11 +1149,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -1101,7 +1169,8 @@
     {
       "name": {
         "en": "RGBW GU10 Bulb",
-        "nl": "RGBW GU10 Lamp"
+        "nl": "RGBW GU10 Lamp",
+        "de": "RGBW GU10 Lampe"
       },
       "class": "light",
       "capabilities": [
@@ -1136,7 +1205,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -1146,11 +1216,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -1163,7 +1235,8 @@
           "type": "number",
           "label": {
             "nl": "Aan/Uit Transitie tijd in seconden",
-            "en": "On/Off Transition time in seconds"
+            "en": "On/Off Transition time in seconds",
+            "de": "Ein/Aus-Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -1177,7 +1250,8 @@
     {
       "name": {
         "en": "RGBW OFL Ledstrip",
-        "nl": "RGBW OFL Ledstrip"
+        "nl": "RGBW OFL Ledstrip",
+        "de": "RGBW OFL Ledstrip"
       },
       "class": "light",
       "capabilities": [
@@ -1213,7 +1287,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -1223,11 +1298,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -1241,7 +1318,8 @@
     {
       "name": {
         "en": "RGBW OSL Spots",
-        "nl": "RGBW OSL Spots"
+        "nl": "RGBW OSL Spots",
+        "de": "RGBW OSL Spots"
       },
       "class": "light",
       "capabilities": [
@@ -1276,7 +1354,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer dan de lamp te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De lamp zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -1286,11 +1365,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -1304,7 +1385,8 @@
     {
       "name": {
         "en": "RGBW LEDSTRIP",
-        "nl": "RGBW LEDSTRIP"
+        "nl": "RGBW LEDSTRIP",
+        "de": "RGBW LEDSTRIP"
       },
       "class": "light",
       "capabilities": [
@@ -1337,7 +1419,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the strip to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the device by toggling it 6 times with a 5 second interval. It will flash to indicate it has been reset.",
-            "nl": "Zet de strip uit en weer aan.\n\nWordt de strip niet automatisch toegevoegd binnen 20 seconden, probeer dan de strip te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De strip zal knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de strip uit en weer aan.\n\nWordt de strip niet automatisch toegevoegd binnen 20 seconden, probeer dan de strip te resetten door hem 6 keer aan en uit te zetten met 5 seconden tussenpozen. De strip zal knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie mit einem 5 Sekunden Intervall 6 Mal ein- und ausschalten. Zur Bestätigung blinkt die Lampe."
           }
         }
       },
@@ -1347,11 +1430,13 @@
           "type": "number",
           "label": {
             "en": "Transition Time",
-            "nl": "Overgangstijd"
+            "nl": "Overgangstijd",
+            "de": "Übergangszeit"
           },
           "hint": {
             "en": "This setting determines the time in seconds it takes to dim from one level to another.",
-            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander."
+            "nl": "Deze instelling bepaalt de duur in seconden van het dimmen van een niveau naar een ander.",
+            "de": "Diese Einstellung bestimmt die Zeit in Sekunden, die benötigt wird, um von einer Stufe zur anderen zu dimmen."
           },
           "value": 1,
           "attr": {
@@ -1365,7 +1450,8 @@
     {
       "name": {
         "en": "Smart Plug",
-        "nl": "Smart Plug"
+        "nl": "Smart Plug",
+        "de": "Smart Plug"
       },
       "class": "socket",
       "capabilities": [
@@ -1383,7 +1469,8 @@
         "learnmode": {
           "instruction": {
             "en": "Toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try turning the Plug on and off 6 times.",
-            "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
+            "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten.",
+            "de": "Schalten Sie den Stecker aus und wieder ein um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch, versuchen Sie den Stecker 6 Mal ein- und auszuschalten."
           }
         }
       },
@@ -1392,7 +1479,8 @@
     {
       "name": {
         "en": "SP120",
-        "nl": "SP120"
+        "nl": "SP120",
+        "de": "SP120"
       },
       "class": "socket",
       "capabilities": [
@@ -1435,7 +1523,8 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the button on the side for 5 seconds and release.",
-            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los.",
+            "de": "Drücken und halten Sie den seitlichen Knopf für 5 Sekunden und lassen Sie ihn dann wieder los."
           }
         }
       },
@@ -1445,11 +1534,13 @@
           "type": "number",
           "label": {
             "en": "Report Interval",
-            "nl": "Report Interval"
+            "nl": "Report Interval",
+            "de": "Report Interval"
           },
           "hint": {
             "en": "This setting determines the max report Interval.",
-            "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald."
+            "nl": "Deze instelling bepaalt de waarde waarop op zijn laatst het rapport wordt opgehaald.",
+            "de": "Diese Einstellung bestimmt das maximale Report Intervall."
           },
           "value": 60,
           "attr": {
@@ -1464,7 +1555,8 @@
     {
       "name": {
         "en": "SP220",
-        "nl": "SP220"
+        "nl": "SP220",
+        "de": "SP220"
       },
       "class": "socket",
       "capabilities": [
@@ -1498,7 +1590,8 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the button on the side for 5 seconds and release.",
-            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los.",
+            "de": "Drücken und halten Sie den seitlichen Knopf für 5 Sekunden und lassen Sie ihn dann wieder los."
           }
         }
       },
@@ -1508,7 +1601,8 @@
     {
       "name": {
         "en": "SP222",
-        "nl": "SP222"
+        "nl": "SP222",
+        "de": "SP222"
       },
       "class": "socket",
       "capabilities": [
@@ -1544,7 +1638,8 @@
         "learnmode": {
           "instruction": {
             "en": "Press and hold the button on the side for 5 seconds and release.",
-            "nl": "Druk de knop op de zijkant 5 seconden in en laat los."
+            "nl": "Druk de knop op de zijkant 5 seconden in en laat los.",
+            "de": "Drücken und halten Sie den seitlichen Knopf für 5 Sekunden und lassen Sie ihn dann wieder los."
           }
         }
       },
@@ -1554,7 +1649,8 @@
     {
       "name": {
         "en": "Tunable Bulb",
-        "nl": "Tunable Lamp"
+        "nl": "Tunable Lamp",
+        "de": "Tunable Bulb"
       },
       "class": "light",
       "capabilities": [
@@ -1591,7 +1687,8 @@
           "image": "/drivers/tunable_bulb/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -1605,7 +1702,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -1619,7 +1717,8 @@
     {
       "name": {
         "en": "Tunable E14",
-        "nl": "Tunable E14"
+        "nl": "Tunable E14",
+        "de": "Tunable E14"
       },
       "class": "light",
       "capabilities": [
@@ -1655,7 +1754,8 @@
           "image": "/drivers/tunable_e14/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -1669,7 +1769,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
@@ -1683,7 +1784,8 @@
     {
       "name": {
         "en": "Tunable GU10 Bulb",
-        "nl": "Tunable GU10 Lamp"
+        "nl": "Tunable GU10 Lamp",
+        "de": "Tunable GU10 Bulb"
       },
       "class": "light",
       "capabilities": [
@@ -1720,7 +1822,8 @@
           "image": "/drivers/tunable_gu10/assets/icon.svg",
           "instruction": {
             "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 6 times very quickly. It will flash twice to indicate it has been reset.",
-            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset.",
+            "de": "Schalten Sie die Lampe aus und wieder an um das Pairing zu starten.\n\nWenn das Pairing nicht automatisch innerhalb von 20 Sekunden beginnt, versuchen Sie die Lampe zurückzusetzen, indem Sie sie 6 Mal sehr schnell ein- und ausschalten. Zur Bestätigung blinkt die Lampe zweimal."
           }
         }
       },
@@ -1734,7 +1837,8 @@
           "type": "number",
           "label": {
             "nl": "Transitie tijd in seconden",
-            "en": "Transition time in seconds"
+            "en": "Transition time in seconds",
+            "de": "Übergangszeit in Sekunden"
           },
           "value": 1,
           "attr": {
