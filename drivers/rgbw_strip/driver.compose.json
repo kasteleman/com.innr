@@ -28,7 +28,10 @@
   },
   "zigbee": {
     "manufacturerName": "innr",
-    "productId": "FL 130 C",
+    "productId": [
+      "FL 120 C",
+      "FL 130 C"
+    ],
     "deviceId": 528,
     "profileId": 49246,
     "learnmode": {
