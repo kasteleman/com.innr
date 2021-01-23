@@ -10,24 +10,6 @@ class SmartPlugSP120 extends ZigBeeDevice {
 		this.printNode();
 		this.enableDebug();
 
-		this.node.endpoints[0].clusters.genTime.read('time')
-			.then(result => {
-				this.log('time: ', result);
-				if (result === 0) {
-					this.node.endpoints[0].clusters.genTime.write('time', 0x5B1991B9)
-						.then(res => {
-							this.log('write Time: ', res);
-						})
-						.catch(err => {
-							this.error('Error write Time: ', err);
-						});
-				}
-			})
-			.catch(err => {
-				this.log('could not read time');
-				this.log(err);
-			});
-
 		if (this.hasCapability('onoff')) {
 			this.registerCapability('onoff', 'genOnOff', {
 				getOpts: {
@@ -120,7 +102,7 @@ class SmartPlugSP120 extends ZigBeeDevice {
 			});
 
 		}	else {
-			callback(Homey.__("report interval settings error"), null);
+			callback(this.log('report interval settings error'), null);
 		}
 	}
 

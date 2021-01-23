@@ -11,7 +11,8 @@
   "zigbee": {
     "manufacturerName": "innr",
     "productId": [
-      "RSL 110"
+      "RSL 110",
+      "RSL 115"
     ],
     "deviceId": 256,
     "profileId": 49246,
