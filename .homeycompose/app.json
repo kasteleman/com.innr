@@ -10,6 +10,7 @@
   "category": [
     "lights"
   ],
+  "brandColor": "#e3004a",
   "version": "1.1.22",
   "compatibility": ">=1.5.13",
   "sdk": 2,
